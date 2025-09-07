@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>International Driver Office — Driver Details</title>
+    <meta
+      name="description"
+      content="Provide your driver details for your International Driving Permit application."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ====== Base / Reset ====== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Ubuntu, "Helvetica Neue", Arial, sans-serif;
+        color: #0f172a;
+        line-height: 1.6;
+        background: #ffffff;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      :root {
+        --brand: #1457ff;
+        --brand-2: #0ea5e9;
+        --green: #10b981;
+        --ink: #0f172a;
+        --muted: #475569;
+        --muted-2: #64748b;
+        --line: #e2e8f0;
+        --bg-soft: #f8fafc;
+        --card: #ffffff;
+        --radius: 16px;
+        --container: 1476px;
+      }
+
+      .container {
+        margin-inline: auto;
+        max-width: var(--container);
+        padding: 0px 24px;
+      }
+
+      /* ====== Top Notice Bar ====== */
+      .topbar {
+        background: #0ada8f;
+        color: #052e16;
+        font-weight: 700;
+        text-align: center;
+        padding: 10px 20px;
+        letter-spacing: 0.2px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        max-height: 47px;
+      }
+
+      .big-arrow {
+        font-size: 52px;
+        margin-left: 2px;
+        line-height: 1;
+        display: inline-block;
+        padding-bottom: 8px;
+      }
+
+      /* ====== Header / Nav ====== */
+      .header-wrapper {
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header {
+        padding: 20px 0;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        position: relative;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .lang-currency {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .lang-selector {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .globe-icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      .currency {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      /* ====== Main Content ====== */
+      .main-content {
+        padding: 47px 0;
+        min-height: 70vh;
+      }
+
+      .checkout-container {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 40px;
+        align-items: start;
+      }
+
+      .form-section {
+        background: white;
+        border: 0.8px solid var(--line);
+        border-radius: 20px;
+        padding: 40px;
+      }
+
+      .form-section h2 {
+        font-family: "Matter";
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 22px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+
+        margin: 0 0 8px 0;
+      }
+
+      .form-subtitle {
+        color: #464c50;
+        font-family: "Matter";
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0%;
+
+        margin-bottom: 32px;
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .form-row-three {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 16px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .form-label {
+        font-family: "Matter";
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+      }
+
+      .required {
+        color: #ef4444;
+      }
+
+      .form-input,
+      .form-select {
+        padding: 12px 16px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        font-size: 14px;
+        background: white;
+        transition: border-color 0.2s;
+      }
+
+      .form-input:focus,
+      .form-select:focus {
+        outline: none;
+        border-color: var(--brand);
+      }
+
+      .form-input::placeholder {
+        color: var(--muted-2);
+      }
+
+      .phone-input {
+        display: flex;
+        gap: 8px;
+      }
+
+      .country-flag {
+        width: 24px;
+        height: 18px;
+        border-radius: 2px;
+      }
+
+      .license-classes {
+        margin-top: 8px;
+      }
+
+      .license-icons {
+        display: flex;
+        gap: 12px;
+      }
+
+      .license-icon {
+        width: 48px;
+        height: 48px;
+        border: 2px solid var(--line);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        background: white;
+      }
+
+      .license-icon:hover {
+        border-color: var(--brand);
+      }
+
+      .license-icon.selected {
+        border-color: var(--brand);
+        background: #f0f7ff;
+      }
+
+      .license-icon img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .form-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        border-radius: 20px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 14px;
+      }
+
+      .btn.primary {
+        background: #0168de;
+        font-family: Matter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+
+        color: white;
+      }
+
+      .btn.primary:hover {
+        background: #0f46e6;
+      }
+
+      .btn.secondary {
+        background: transparent;
+        font-family: Matter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        leading-trim: NONE;
+        line-height: 20px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+
+        border: none;
+        padding: 12px 0;
+      }
+
+      .btn.secondary:hover {
+        color: var(--ink);
+      }
+
+      /* ====== Right Sidebar ====== */
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .progress-card {
+        background: white;
+        border: 0.8px solid var(--line);
+        border-radius: 16px;
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .progress-ring {
+        width: 67px; /* 2 * outer radius */
+        height: 67px;
+        border-radius: 50%;
+        background: conic-gradient(#0168de 0% 25%, #abcce6 25% 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .progress-inner {
+        width: 51px; /* inner radius = 32px → 80 - 2*8 = 64 */
+        height: 51px;
+        border-radius: 50%;
+        background: white; /* hollow center */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+        color: #262626;
+
+        position: absolute;
+      }
+
+      .progress-text {
+        flex: 1;
+      }
+
+      .progress-title {
+        color: #0168de;
+        font-family: Matter;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0.1px;
+
+        margin-bottom: 4px;
+      }
+
+      .progress-subtitle {
+        color: #98a2b3;
+        font-family: Matter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 14px;
+        leading-trim: NONE;
+        line-height: 22px;
+        letter-spacing: 0.4px;
+      }
+
+      .info-card {
+        background: white;
+        border: 0.8px solid var(--line);
+        border-radius: 16px;
+        padding: 24px;
+        color: var(--ink);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .info-card .imagegirl {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .benefits-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .benefits-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        font-family: "Matter";
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: #464c50;
+      }
+
+      .check-icon {
+        width: 20px;
+        height: 20px;
+        background: #10b981;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+        flex-shrink: 0;
+      }
+
+      .support-section {
+        background: white;
+        border: 0.8px solid var(--line);
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      .support-section h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 16px 0;
+        font-family: "Matter";
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #464c50;
+      }
+
+      .support-buttons {
+        display: flex;
+        gap: 12px;
+      }
+
+      .support-buttons .btn {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .btn.secondary-outline {
+        background: white;
+        color: var(--brand);
+        border: 2px solid var(--brand);
+      }
+
+      .btn.secondary-outline:hover {
+        background: var(--brand);
+        color: white;
+      }
+
+      /* ====== Footer ====== */
+      .footer {
+        background: white;
+        color: var(--muted);
+        margin: 0 125px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 20px;
+        border: 1px solid #d0def1;
+        padding: 34px 36px 44px 36px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .footer-links a {
+        color: var(--muted);
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: var(--ink);
+      }
+
+      .security-badges {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding: 24px 0 119px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* ====== Responsive ====== */
+      @media (max-width: 768px) {
+        .checkout-container {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .form-row,
+        .form-row-three {
+          grid-template-columns: 1fr;
+        }
+        .nav {
+          justify-content: start;
+        }
+
+        .phone-input {
+          flex-direction: column;
+        }
+
+        .license-icons {
+          flex-wrap: wrap;
+        }
+
+        .support-buttons {
+          flex-direction: column;
+        }
+
+        .footer {
+          margin: 0 20px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+        }
+
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top notice -->
+    <div class="topbar">
+      Get Your Permit – Start Driving the World Today!
+      <span class="big-arrow">→</span>
+    </div>
+
+    <!-- Header -->
+    <div class="header-wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="nav">
+            <div class="logo">
+              <img
+                src="Group 1000003602 1.png"
+                alt="International Driver Office"
+              />
+            </div>
+
+            <div class="actions">
+              <div class="lang-currency">
+                <div class="lang-selector">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="globe-icon"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15 15 0 0 1 0 20"></path>
+                    <path d="M12 2a15 15 0 0 0 0 20"></path>
+                  </svg>
+                  <select
+                    style="
+                      border: none;
+                      background: none;
+                      color: inherit;
+                      font-size: inherit;
+                      cursor: pointer;
+                    "
+                  >
+                    <option>English</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                  </select>
+                </div>
+                <div class="currency">
+                  <select
+                    style="
+                      border: none;
+                      background: none;
+                      color: inherit;
+                      font-size: inherit;
+                      cursor: pointer;
+                    "
+                  >
+                    <option>$ (USD)</option>
+                    <option>€ (EUR)</option>
+                    <option>£ (GBP)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div class="checkout-container">
+          <div class="form-section">
+            <h2>Driver's details</h2>
+            <p class="form-subtitle">
+              Please provide details exactly as they are shown on your driver's
+              license.
+            </p>
+
+            <form class="form-grid">
+              <!-- Email -->
+              <div class="form-group">
+                <label class="form-label"
+                  >Email <span class="required">*</span></label
+                >
+                <input
+                  type="email"
+                  class="form-input"
+                  placeholder="example@gmail.com"
+                  required
+                />
+                <small
+                  style="
+                    font-family: Matter;
+                    font-weight: 400;
+                    font-style: Regular;
+                    font-size: 18px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                  "
+                >
+                  We will contact you on this email regarding your order.
+                </small>
+              </div>
+
+              <!-- First Name & Last Name -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >First Name <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="First Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Last Name <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="Last Name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Birth Country & Birth Date -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >Birth Country <span class="required">*</span></label
+                  >
+                  <select class="form-select" required>
+                    <option value="">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="ca">Canada</option>
+                    <option value="au">Australia</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Birth Date <span class="required">*</span></label
+                  >
+                  <div class="form-row-three">
+                    <select class="form-select" required>
+                      <option value="">Month</option>
+                      <option value="01">January</option>
+                      <option value="02">February</option>
+                      <option value="03">March</option>
+                      <option value="04">April</option>
+                      <option value="05">May</option>
+                      <option value="06">June</option>
+                      <option value="07">July</option>
+                      <option value="08">August</option>
+                      <option value="09">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                    <select class="form-select" required>
+                      <option value="">Day</option>
+                      <option value="01">1</option>
+                      <option value="02">2</option>
+                      <option value="03">3</option>
+                      <!-- Add more days as needed -->
+                    </select>
+                    <select class="form-select" required>
+                      <option value="">Year</option>
+                      <option value="2000">2000</option>
+                      <option value="1999">1999</option>
+                      <option value="1998">1998</option>
+                      <!-- Add more years as needed -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gender, Eye Color, Height -->
+              <div class="form-row-three">
+                <div class="form-group">
+                  <label class="form-label"
+                    >Gender <span class="required">*</span></label
+                  >
+                  <select class="form-select" required>
+                    <option value="">Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Eye Color <span class="required">*</span></label
+                  >
+                  <select class="form-select" required>
+                    <option value="">Select Color</option>
+                    <option value="brown">Brown</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="hazel">Hazel</option>
+                    <option value="gray">Gray</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Height <span class="required">*</span></label
+                  >
+                  <select class="form-select" required>
+                    <option value="">Height</option>
+                    <option value="150">150 CM</option>
+                    <option value="155">155 CM</option>
+                    <option value="160">160 CM</option>
+                    <option value="165">165 CM</option>
+                    <option value="170">170 CM</option>
+                    <option value="175">175 CM</option>
+                    <option value="180">180 CM</option>
+                    <option value="185">185 CM</option>
+                    <option value="190">190 CM</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Current Country & Phone -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >In which country are you living now
+                    <span class="required">*</span></label
+                  >
+                  <select class="form-select" required>
+                    <option value="">🇺🇸 United States</option>
+                    <option value="uk">🇬🇧 United Kingdom</option>
+                    <option value="ca">🇨🇦 Canada</option>
+                    <option value="au">🇦🇺 Australia</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Phone Number <span class="required">*</span></label
+                  >
+                  <div
+                    class="phone-input"
+                    style="
+                      border: 1px solid var(--line);
+                      border-radius: 8px;
+                      padding: 0;
+                    "
+                  >
+                    <select
+                      class="form-select"
+                      style="padding-right: 0; border: none"
+                    >
+                      <option value="+1">🇺🇸</option>
+                      <option value="+44">🇬🇧</option>
+                      <option value="+1">🇨🇦</option>
+                    </select>
+                    <input
+                      type="tel"
+                      class="form-input"
+                      placeholder="Phone Number"
+                      style="flex: 1; border: none"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="form-group">
+                <label class="form-label"
+                  >Address Will be user preparing IDP Card
+                  <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="License Address"
+                  required
+                />
+              </div>
+
+              <!-- License Classes -->
+              <div
+                class="form-group"
+                style="flex-direction: row; align-items: center"
+              >
+                <label class="form-label"
+                  >License Classes <span class="required">*</span></label
+                >
+                <div class="license-icons">
+                  <img src="licenseClass.svg" alt="" />
+                </div>
+              </div>
+            </form>
+
+            <!-- Navigation -->
+            <div class="form-navigation">
+              <button
+                type="button"
+                class="btn secondary"
+                style="
+                  font-weight: 400;
+                  border: 1px solid #dee2e6;
+                  padding: 16px 20px 16px 20px;
+                "
+              >
+                previous
+              </button>
+              <button
+                type="submit"
+                class="btn primary"
+                style="font-weight: 400"
+              >
+                Next →
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="sidebar">
+            <!-- Progress Card -->
+            <div class="progress-card">
+              <div class="progress-ring">
+                <div class="progress-inner">1 of 4</div>
+              </div>
+
+              <div class="progress-text">
+                <div class="progress-title">Driver's details</div>
+                <div class="progress-subtitle">
+                  Please provide details exactly as they are shown on your
+                  driver's license.
+                </div>
+              </div>
+            </div>
+
+            <!-- Info Card -->
+            <div class="info-card">
+              <img
+                class="imagegirl"
+                src="checkout 1 image.svg"
+                alt="Woman with IDP"
+              />
+
+              <ul class="benefits-list">
+                <li>
+                  <div class="check-icon">✓</div>
+                  Instant Approval
+                </li>
+                <li>
+                  <div class="check-icon">✓</div>
+                  Valid for 1-3 Years
+                </li>
+                <li>
+                  <div class="check-icon">✓</div>
+                  Full Refund Guarantee
+                </li>
+                <li>
+                  <div class="check-icon">✓</div>
+                  Recognized in 150+ Countries
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support Section -->
+            <div class="support-section">
+              <h3>Do you need assistance?</h3>
+              <div class="support-buttons">
+                <button class="btn primary">Live chat</button>
+                <button class="btn secondary-outline">Email</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms and Conditions</a>
+            <span>|</span>
+            <a href="#">Help</a>
+          </div>
+          <div class="security-badges">
+            <img src="cards.svg" alt="Security badges" />
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">All Right Reserved - © 2025</div>
+    </footer>
+
+    <script>
+      // License class selection
+      document.querySelectorAll(".license-icon").forEach(icon => {
+        icon.addEventListener("click", function () {
+          this.classList.toggle("selected")
+        })
+      })
+
+      // Form validation
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault()
+
+        // Check if at least one license class is selected
+        const selectedClasses = document.querySelectorAll(
+          ".license-icon.selected"
+        )
+        if (selectedClasses.length === 0) {
+          alert("Please select at least one license class.")
+          return
+        }
+
+        // Here you would normally submit the form
+        console.log("Form submitted successfully")
+      })
+    </script>
+  </body>
+</html>

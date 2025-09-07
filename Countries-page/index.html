@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>International Driver Office — Certified IDPs</title>
+    <meta
+      name="description"
+      content="Certified International Driving Permits — fast delivery, global validity. Apply online and get digital and physical copies."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ====== Base / Reset ====== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Ubuntu, "Helvetica Neue", Arial, sans-serif;
+        color: #0f172a;
+        line-height: 1.6;
+        background: #ffffff;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      :root {
+        --brand: #1457ff;
+        --brand-2: #0ea5e9;
+        --green: #10b981;
+        --ink: #0f172a;
+        --muted: #475569;
+        --muted-2: #64748b;
+        --line: #e2e8f0;
+        --bg-soft: #f8fafc;
+        --card: #ffffff;
+        --radius: 16px;
+        --container: 1140px;
+      }
+
+      .container {
+        margin-inline: auto;
+      }
+
+      /* ====== Top Notice Bar ====== */
+      .topbar {
+        background: #0ada8f;
+        color: #052e16;
+        font-weight: 700;
+        text-align: center;
+        padding: 10px 20px;
+        letter-spacing: 0.2px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        max-height: 45px;
+      }
+      .permit-text {
+        width: 435px;
+        height: 25px;
+      }
+
+      .big-arrow {
+        font-size: 52px;
+        margin-left: 2px;
+        line-height: 1;
+        display: inline-block;
+        padding-bottom: 8px;
+      }
+
+      /* ====== Header / Nav ====== */
+      .header {
+        background: #ffffff;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 2rem;
+        gap: 20px;
+        height: 71px;
+        border-bottom: 1px solid black;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        white-space: nowrap;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-weight: 400;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .lang-currency {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .currency i {
+        margin-left: 4px;
+        font-size: 12px;
+      }
+
+      .lang-selector {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .lang-selector svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+        vertical-align: middle;
+      }
+
+      .btn {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: #0f172a;
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .btn.primary {
+        background: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+        width: 140px;
+        font-weight: 400;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .mobile-menu-btn span {
+        width: 24px;
+        height: 2px;
+        background: white;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 85px;
+        /* left: -100%; */
+        width: 25%;
+        height: 100vh;
+        background: #043c9a;
+        z-index: 50;
+        transition: left 0.3s ease;
+        padding: 80px 20px 20px;
+      }
+
+      .mobile-menu.active {
+        display: block;
+        right: 0;
+      }
+
+      .mobile-menu .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .mobile-menu nav a {
+        color: white;
+        font-size: 18px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .menu-btn:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 32px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .close-btn:hover {
+        transform: rotate(90deg);
+      }
+
+      /* ====== Pricing ====== */
+      .pricing {
+        position: relative;
+        text-align: center;
+        background-color: white;
+        padding: 35px 300px;
+      }
+
+      .pricing p {
+        text-align: center;
+        margin: auto;
+        font-family: DM Sans;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        leading-trim: NONE;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: center;
+        color: #8d8d8d;
+      }
+      .section-title {
+        font-family: DM Sans;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 32px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .section-title-faq {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0 0 8px;
+      }
+      .section-sub {
+        max-width: 600px;
+      }
+
+      .section-sub-faq {
+        text-align: center;
+        color: var(--muted-2);
+        max-width: 760px;
+        margin: 0 auto;
+        max-width: 630px;
+        padding-bottom: 20px;
+      }
+
+      .toggle-row {
+        display: flex;
+        gap: 0;
+        justify-content: center;
+        margin: 20px 0 30px 0;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        padding: 4px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .chip {
+        flex: 1;
+        padding: 16px 20px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        font-size: 15px;
+        font-weight: 500;
+        color: #374151;
+        background: transparent;
+      }
+
+      .chip:hover {
+        background-color: #f8f9ff;
+        transform: translateY(-1px);
+      }
+
+      .chip.active {
+        background-color: #f0f4ff;
+        border-color: #3b82f6;
+        color: #1e40af;
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+      }
+
+      .cards {
+        display: flex;
+        gap: 22px;
+        margin-top: 28px;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        flex: 1;
+        max-width: 400px;
+        background: #f9fafb;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        /* text-align: center; */
+        border: 1px solid var(--line);
+      }
+
+      .card.primary {
+        background-image: url("Frame 1987628535[1].png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+        border-color: transparent;
+      }
+
+      .price {
+        font-size: 46px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        margin: 10px 0 6px;
+        font-family: "matter";
+      }
+      .table-div {
+        max-width: 1222px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 70px;
+        margin-right: 70px;
+        margin-top: 45px;
+      }
+
+      .pricing-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        background-color: white;
+      }
+
+      .pricing-table th,
+      .pricing-table td {
+        border-bottom: 1px solid #d9dbe9;
+        padding: 12px;
+        font-size: 14px;
+      }
+      .pricing-table td img {
+        display: inline;
+        vertical-align: middle;
+      }
+
+      .pricing-table tbody {
+        font-family: Typography/Font Family/Primary;
+        font-weight: 600;
+        font-style: Semi Bold;
+        font-size: Typography/Font Size/Display 3;
+        line-height: 114.99999999999999%;
+        letter-spacing: 0%;
+        margin: 5px;
+      }
+
+      .pricing-table tr {
+        line-height: 2.8;
+      }
+      .pricing-table th {
+        background-color: white;
+        font-weight: bold;
+        font-family: Typography/Font Family/Primary;
+        font-weight: 600;
+        font-style: Semi Bold;
+        font-size: Typography/Font Size/Display 3;
+        line-height: 114.99999999999999%;
+        letter-spacing: 0%;
+        font-size: 14px;
+      }
+
+      .feat {
+        display: grid;
+        gap: 8px;
+        margin: 14px 0;
+      }
+
+      .feat li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        color: inherit;
+      }
+
+      .card .btn {
+        width: 100%;
+        margin-top: 12px;
+      }
+
+      .card.primary .btn {
+        background: #22c55e;
+        border-color: #22c55e;
+        color: #052e16;
+      }
+
+      .card h4 {
+        margin: 0 0 10px 0;
+      }
+
+      .card .price {
+        font-size: 28px;
+        margin: 10px 0;
+      }
+
+      .card img {
+        max-width: 150px;
+        height: auto;
+      }
+
+      .card ul.feat {
+        margin-top: 15px;
+        padding-left: 0;
+        list-style: none;
+        text-align: left;
+        width: 100%;
+      }
+
+      .card ul.feat li {
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+      .pricing-details {
+        padding-top: 5px;
+      }
+      .pricing-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .pricing-div h1 {
+        /* font-family: DM Sans; */
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 35px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+      }
+      .second-section {
+        padding: 0px;
+      }
+
+      /* ====== Continent Tabs ====== */
+      .continent-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        padding-top: 100px;
+      }
+
+      .continent-tab {
+        padding: 12px 24px;
+        background: #fff;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 500;
+        color: black;
+        transition: all 0.3s ease;
+        font-size: 14px;
+        width: 168.17px;
+        font-family: Inter;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 14px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+
+      .continent-tab.active {
+        background: #e6f0fc;
+        color: black;
+        border: 1px solid #0168de33;
+      }
+
+      /* ====== Countries Grid ====== */
+      .countries-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 16px;
+        margin-bottom: 60px;
+        padding: 0px 20px 20px 20px;
+        max-height: 500px; /* 👈 set height limit */
+        overflow-y: auto; /* 👈 vertical scroll */
+      }
+
+      .country-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px;
+        /* background: white; */
+        border-radius: 8px;
+        /* border: 1px solid #e2e8f0; */
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+        flex-wrap: wrap; /* prevents overflow */
+      }
+
+      .country-item:hover {
+        border-color: #0ada8f;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .country-flag {
+        width: 32px;
+        height: 24px;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      .country-name {
+        font-family: Inter;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: -2%;
+        text-align: center;
+        vertical-align: middle;
+        color: #111111;
+      }
+
+      @media (max-width: 992px) {
+        .countries-grid {
+          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        }
+        .country-item {
+          font-size: 13px;
+          padding: 12px;
+        }
+      }
+      /* Fix height / compact design for tablets (768px–959px) */
+      @media (min-width: 768px) and (max-width: 959px) {
+        .countries-grid {
+          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+          gap: 12px;
+        }
+
+        .country-item {
+          padding: 10px 12px;
+          font-size: 13px;
+          gap: 8px;
+        }
+
+        .country-flag {
+          width: 28px;
+          height: 20px;
+        }
+
+        .country-name {
+          font-size: 13px;
+          line-height: 1.2; /* tighter line spacing */
+        }
+      }
+
+      /* Large Mobiles */
+      @media (max-width: 768px) {
+        .countries-grid {
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
+        .country-item {
+          font-size: 12px;
+          padding: 10px;
+          gap: 8px;
+        }
+        .country-flag {
+          width: 28px;
+          height: 20px;
+        }
+      }
+
+      /* Small Mobiles */
+      @media (max-width: 480px) {
+        .countries-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+        }
+        .country-item {
+          font-size: 12px;
+          padding: 8px;
+        }
+      }
+
+      /* Extra Small Screens */
+      @media (max-width: 360px) {
+        .countries-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ====== Testimonials ====== */
+      .testimonials {
+        padding: 50px;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .left,
+      .right {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex: 1;
+      }
+
+      .left h2 {
+        font-size: 32px;
+        margin-bottom: 1px;
+        color: #000000;
+        font-family: Matter;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 35px;
+        leading-trim: NONE;
+        line-height: 55px;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+
+      .rating-row-testimonials {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 500;
+        margin-bottom: 8px;
+        font-size: 12px;
+        max-width: 400px;
+        margin-left: 15px;
+      }
+      .testimonial-cards {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+        flex-wrap: wrap; /* makes it responsive */
+      }
+
+      .testimonial-cards .card {
+        flex: 1;
+        min-width: 280px;
+        background: #f9fafb;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        width: 428px;
+        height: 258px;
+
+        /* justify-content: space-between; */
+      }
+      /* Search card */
+      .search-card {
+        position: absolute;
+        top: 330px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 850px;
+        max-width: calc(100% - 40px);
+        z-index: 10;
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: 0 12px 30px rgba(2, 6, 23, 0.08);
+        margin: 24px auto 12px;
+        padding: 14px;
+        gap: 12px;
+      }
+
+      .application-start {
+        display: grid;
+        grid-template-columns: 3fr 0.7fr auto;
+        gap: 10px;
+      }
+
+      .input {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 15px 18px;
+        font-weight: 500;
+        color: #0f172a;
+
+        width: 100%;
+      }
+
+      .input:focus {
+        outline: none;
+        border-color: #3b82f6; /* blue focus */
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+      }
+      .input option {
+        font-size: 14px;
+        font-weight: 400;
+        /* text-align: center; */
+      }
+
+      .btn.start {
+        background: #82e97b;
+        border-color: #22c55e;
+        color: #052e16;
+        font-weight: 500;
+        padding: 12px 18px;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .note {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #e6f0fc;
+        border-radius: 10px;
+
+        margin-top: 5px;
+        padding-left: 15px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+
+      .disclaimer-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #0556da;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        flex-shrink: 0;
+      }
+
+      .testimonial-cards .card h3 {
+        font-family: Inter;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.5%;
+        margin: 0;
+      }
+
+      .testimonial-cards .card p {
+        font-family: Inter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.5%;
+        text-align: justify;
+      }
+
+      .testimonial-cards .card .name {
+        font-family: Inter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.5%;
+      }
+
+      .review-card {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .review-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #222;
+      }
+
+      .review-card p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 15px;
+        font-weight: 400;
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .reviewer img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .reviewer-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .reviewer-name {
+        font-weight: 700;
+        color: #333;
+      }
+
+      .right .review-card {
+        margin-bottom: 30px;
+      }
+
+      .testimonial-page {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        font-weight: bold;
+        align-items: center;
+      }
+
+      .page-arrows {
+        display: flex;
+        gap: 15px;
+      }
+
+      .arrow {
+        cursor: pointer;
+        font-size: 20px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        user-select: none;
+        transition: background 0.3s;
+        font-weight: bolder;
+      }
+
+      .arrow.left {
+        color: #888;
+      }
+
+      .arrow.right {
+        color: #3e66df;
+      }
+      .countries-section {
+        position: relative;
+      }
+      .countries-page {
+        background-image: url("Group 1000003826[1].png");
+
+        background-size: 94% auto; /* 90% width, auto height */
+        height: 727px; /* keep your height */
+        border-radius: 20px; /* 🔹 rounded corners */
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 75px;
+      }
+
+      .arrow.right:hover {
+        background-color: #0056b3;
+      }
+
+      .arrow.left:hover {
+        background-color: #ddd;
+      }
+
+      /* ====== FAQ ====== */
+      .faq {
+        background-image: url("Group 1000003826[1].png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: #f8f8f8;
+        padding: 70px 0;
+      }
+
+      .faq-wrap {
+        max-width: 860px;
+        margin: 20px auto 0;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--line);
+        background: #fff;
+      }
+
+      .faq-q {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 18px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .faq-item.open .faq-q {
+        color: #007bff;
+        border-left: 3px solid blue;
+        background-color: #e6f0ff;
+      }
+      .faq-item.open .faq-q img {
+        transform: rotate(180deg);
+      }
+
+      .faq-a {
+        display: none;
+        padding: 0 18px 18px;
+        color: var(--muted-2);
+      }
+
+      .faq-item.open .faq-a {
+        display: block;
+        border-left: 3px solid blue;
+        background-color: #e6f0ff;
+      }
+
+      .faq-item.open .caret {
+        transform: rotate(180deg);
+      }
+
+      /* ====== CTA ====== */
+      .cta {
+        background-image: url("200[1].png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 50px 90px 0px 90px !important;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        height: 308px;
+      }
+
+      .cta::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            90deg,
+            rgb(255 255 255 / 4%) 1px,
+            transparent 1px
+          ),
+          linear-gradient(rgb(255 255 255 / 6%) 1px, #ffffff00 1px);
+        background-size: 65px 65px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .cta .grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 20px;
+        align-items: start;
+      }
+
+      .cta h2 {
+        /* padding-top: 25px; */
+        font-size: 34px;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .cta .accent-word {
+        color: #22c55e;
+      }
+
+      .cta .btn {
+        background: #04da8d;
+        border-color: #22c55e;
+        margin-top: 40px;
+        color: white;
+        width: 140px;
+        margin-left: 32px;
+      }
+
+      .cta-figure {
+        justify-self: end;
+      }
+
+      .cta-figure img {
+        position: relative;
+        max-height: 260px;
+        border-radius: 16px;
+        z-index: 10;
+      }
+
+      .btn-start {
+        position: relative;
+      }
+
+      .getstarted {
+        position: absolute;
+        top: 195px;
+        left: 260px;
+      }
+
+      .getstarted-invert {
+        transform: scale(-1);
+        position: absolute;
+        top: 248px;
+        left: 100px;
+      }
+
+      .curly {
+        top: -128px;
+        left: -105px;
+        z-index: 5 !important;
+      }
+
+      .crown {
+        top: -296px;
+        right: -136px;
+      }
+
+      /* ====== Footer ====== */
+      .footer {
+        background-image: url("Footer.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: #cbd5e1;
+        margin-top: 0;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      .foot-top {
+        padding: 36px 0;
+      }
+
+      .destinations {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 14px;
+        flex-direction: column;
+      }
+
+      .countries {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .pill {
+        padding: 6px 10px;
+        color: #ffffff;
+        font-size: 14px;
+      }
+
+      .pill img {
+        width: 28px;
+        display: inline-block;
+        margin-left: 5px;
+      }
+
+      .foot-mid {
+        padding: 36px 0;
+        display: grid;
+        grid-template-columns: 2fr repeat(3, 0.7fr);
+        gap: 24px;
+      }
+
+      .foot-mid h4 {
+        font-size: 15px;
+        font-weight: 500;
+        color: #e5e7eb;
+        margin: 0 0 10px;
+      }
+      .text-black-small {
+        font-family: Inter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 12px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: #8d8d8d;
+      }
+
+      .foot-mid a {
+        color: white;
+        font-size: 12px;
+      }
+
+      .foot-mid a:hover {
+        color: #e5e7eb;
+      }
+
+      .legal {
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      .legal-disclaimer {
+        font-size: 12px;
+        color: #94a3b8;
+        text-align: center;
+        margin-top: 0px;
+      }
+
+      .foot-bottom {
+        border-top: 1px solid white;
+        padding: 16px 0;
+      }
+
+      .foot-bottom-right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .lang {
+        border-radius: 12px;
+        padding: 8px 12px;
+      }
+
+      .lang-footer {
+        border: 1px solid white;
+        border-radius: 30px;
+        padding: 5px;
+      }
+
+      /* ====== Responsive Design ====== */
+
+      /* Tablets (1024px and below) */
+      @media (max-width: 1220px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .pricing {
+          padding: 30px 160px;
+        }
+
+        .second-section {
+          padding: 0px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .split {
+          grid-template-columns: 1fr;
+          gap: 26px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .cta .grid {
+          grid-template-columns: 1fr;
+        }
+        .nav-links {
+          display: none;
+        }
+        .mobile-menu-btn {
+          display: flex;
+        }
+        .mobile-menu-btn span {
+          background: black;
+        }
+        .pricing {
+          padding: 30px 160px;
+        }
+        .second-section {
+          padding: 0px;
+        }
+
+        .pricing {
+          padding: 35px 50px;
+        }
+
+        .feature-block {
+          margin: 50px;
+        }
+
+        .how {
+          margin-left: 30px;
+          margin-right: 30px;
+        }
+
+        .testimonials {
+          margin-left: 30px;
+          margin-right: 30px;
+          padding: 50px 0;
+        }
+
+        .footer {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        .cta {
+          padding: 40px 30px 0px 30px !important;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .foot-mid {
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+
+        .countries {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 10px;
+          padding: 0;
+        }
+      }
+
+      /* Mobile phones (768px and below) */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 15px;
+        }
+
+        .topbar {
+          font-size: 14px;
+          padding: 8px 15px;
+        }
+
+        .big-arrow {
+          font-size: 28px;
+        }
+        .kb-card {
+          padding-top: 250px;
+        }
+
+        .nav {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        .second-section {
+          padding: 0px;
+        }
+
+        .logo img {
+          width: 120px;
+        }
+
+        .actions {
+          gap: 10px;
+        }
+
+        .lang-currency {
+          display: none;
+        }
+
+        .btn.primary {
+          width: 100px;
+          font-size: 14px;
+          padding: 8px 12px;
+        }
+
+        .feature-block {
+          margin: 30px 0;
+          padding-top: 40px;
+        }
+
+        .fb-title {
+          font-size: 24px;
+          text-align: center;
+        }
+
+        .fb-sub {
+          text-align: center;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .stat {
+          align-items: center;
+          text-align: center;
+        }
+
+        .stat-card {
+          justify-content: center;
+        }
+
+        .how {
+          margin: 30px 15px;
+        }
+
+        .section-title {
+          font-size: 24px;
+          text-align: center;
+        }
+
+        .section-sub {
+          text-align: center;
+          max-width: 100%;
+        }
+
+        .steps {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          padding-bottom: 40px;
+        }
+
+        .step-text {
+          max-width: 280px;
+        }
+
+        .pricing {
+          padding: 40px 20px;
+        }
+        .mobile-menu.active {
+          width: 60%;
+        }
+
+        .section-title-faq {
+          font-size: 24px;
+        }
+
+        .section-sub-faq {
+          max-width: 100%;
+          font-size: 14px;
+        }
+
+        .toggle-row {
+          flex-direction: column;
+          gap: 8px;
+          padding: 8px;
+          max-width: 300px;
+        }
+
+        .chip {
+          padding: 14px 16px;
+        }
+
+        .cards {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .card {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .price {
+          font-size: 36px;
+        }
+
+        .testimonials {
+          position: relative;
+          flex-direction: column;
+          margin: 20px 15px;
+          padding: 40px 0;
+          gap: 20px;
+        }
+
+        .left h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+
+        .rating-row-testimonials {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        .review-card {
+          padding: 20px;
+          margin-bottom: 15px;
+        }
+
+        .review-card h3 {
+          font-size: 16px;
+        }
+
+        .review-card p {
+          font-size: 14px;
+        }
+
+        .reviewer img {
+          width: 40px;
+          height: 40px;
+        }
+
+        .testimonial-page {
+          position: absolute;
+          justify-content: center;
+          bottom: 0;
+        }
+
+        .faq {
+          padding: 40px 0;
+        }
+
+        .faq-wrap {
+          margin: 15px;
+        }
+
+        .faq-q {
+          padding: 14px 16px;
+          font-size: 14px;
+        }
+
+        .faq-a {
+          padding: 0 16px 16px;
+          font-size: 14px;
+        }
+
+        .cta {
+          padding: 30px 20px 0px 20px !important;
+        }
+
+        .cta h2 {
+          font-size: 24px;
+          max-width: 100%;
+          text-align: center;
+          padding-top: 0;
+        }
+
+        .cta .btn {
+          width: 120px;
+          margin: 20px auto 0;
+          display: block;
+        }
+
+        .cta-figure {
+          justify-self: center;
+          text-align: center;
+        }
+
+        .cta-figure img {
+          max-height: 200px;
+        }
+
+        .getstarted,
+        .getstarted-invert,
+        .crown,
+        .curly {
+          display: none;
+        }
+
+        .footer {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .foot-top {
+          padding: 20px 0;
+        }
+
+        .destinations {
+          text-align: center;
+        }
+
+        .countries {
+          /* flex-direction: column; */
+          align-items: center;
+          gap: 8px;
+          padding: 0;
+        }
+
+        .pill {
+          font-size: 12px;
+          padding: 4px 8px;
+        }
+
+        .pill img {
+          width: 20px;
+        }
+
+        .foot-mid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+          text-align: center;
+        }
+
+        .foot-mid h4 {
+          font-size: 18px;
+        }
+
+        .foot-mid a {
+          font-size: 11px;
+        }
+
+        .legal-disclaimer {
+          font-size: 10px;
+          text-align: left;
+        }
+
+        .foot-bottom-right {
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
+
+        .lang-footer {
+          font-size: 12px;
+        }
+      }
+
+      /* Very small phones (480px and below) */
+      @media (max-width: 480px) {
+        .section-title,
+        .section-title-faq {
+          font-size: 20px;
+        }
+
+        .cta h2 {
+          font-size: 20px;
+        }
+
+        .price {
+          font-size: 32px;
+        }
+
+        .review-card {
+          padding: 15px;
+        }
+
+        .foot-mid {
+          padding: 20px 0;
+        }
+      }
+      .start-text {
+        max-width: 370px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top notice -->
+    <div class="topbar">
+      <p class="">Get Your Permit – Start Driving the World Today!</p>
+      <span class="big-arrow">→</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container nav">
+        <div class="logo">
+          <div class="logo">
+            <img src="Group 1000003602 1.png" alt="Logo" />
+          </div>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Pricing</a>
+          <a href="#">Countries</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact us</a>
+          <a href="#">About us</a>
+        </nav>
+
+        <div class="actions">
+          <div class="lang-currency">
+            <span class="lang">
+              <div class="lang-selector">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="globe-icon"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15 15 0 0 1 0 20"></path>
+                  <path d="M12 2a15 15 0 0 0 0 20"></path>
+                </svg>
+
+                <span>English</span>
+              </div>
+            </span>
+            <span class="currency">
+              $ USD <i class="fas fa-chevron-down"></i>
+            </span>
+          </div>
+          <button class="btn primary">Apply Now</button>
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+          <button class="close-btn" onclick="toggleMobileMenu()">
+            &times;
+          </button>
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">Pricing</a>
+            <a href="#">Countries</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact us</a>
+            <a href="#">My account</a>
+            <div style="margin-top: 20px">
+              <button class="btn primary" style="width: 100%">Apply Now</button>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Pricing -->
+    <section class="pricing">
+      <div class="container">
+        <div class="container-text">
+          <h3 class="section-title">
+            From Here to Anywhere – See Where You Can Drive
+          </h3>
+          <p class="section-sub">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam nec
+            suscipit dui sedolme cursus nibh id risus ultrices convallis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="search-card">
+      <div class="application-start">
+        <label>
+          <select class="input">
+            <option value="" disabled selected>Search For Country</option>
+            <option value="AF">Afghanistan</option>
+            <option value="AL">Albania</option>
+            <option value="DZ">Algeria</option>
+            <option value="AD">Andorra</option>
+            <option value="AO">Angola</option>
+            <option value="AG">Antigua and Barbuda</option>
+            <option value="AR">Argentina</option>
+            <option value="AM">Armenia</option>
+            <option value="AU">Australia</option>
+            <option value="AT">Austria</option>
+            <option value="AZ">Azerbaijan</option>
+            <option value="BS">Bahamas</option>
+            <option value="BH">Bahrain</option>
+            <option value="BD">Bangladesh</option>
+            <option value="BB">Barbados</option>
+            <option value="BY">Belarus</option>
+            <option value="BE">Belgium</option>
+            <option value="BZ">Belize</option>
+            <option value="BJ">Benin</option>
+            <option value="BT">Bhutan</option>
+            <option value="BO">Bolivia</option>
+            <option value="BA">Bosnia and Herzegovina</option>
+            <option value="BW">Botswana</option>
+            <option value="BR">Brazil</option>
+            <option value="BN">Brunei</option>
+            <option value="BG">Bulgaria</option>
+            <option value="BF">Burkina Faso</option>
+            <option value="BI">Burundi</option>
+            <option value="KH">Cambodia</option>
+            <option value="CM">Cameroon</option>
+            <option value="CA">Canada</option>
+            <option value="CV">Cape Verde</option>
+            <option value="CF">Central African Republic</option>
+            <option value="TD">Chad</option>
+            <option value="CL">Chile</option>
+            <option value="CN">China</option>
+            <option value="CO">Colombia</option>
+            <option value="KM">Comoros</option>
+            <option value="CG">Congo</option>
+            <option value="CD">Congo (Democratic Republic)</option>
+            <option value="CR">Costa Rica</option>
+            <option value="HR">Croatia</option>
+            <option value="CU">Cuba</option>
+            <option value="CY">Cyprus</option>
+            <option value="CZ">Czech Republic</option>
+            <option value="DK">Denmark</option>
+            <option value="DJ">Djibouti</option>
+            <option value="DM">Dominica</option>
+            <option value="DO">Dominican Republic</option>
+            <option value="EC">Ecuador</option>
+            <option value="EG">Egypt</option>
+            <option value="SV">El Salvador</option>
+            <option value="GQ">Equatorial Guinea</option>
+            <option value="ER">Eritrea</option>
+            <option value="EE">Estonia</option>
+            <option value="ET">Ethiopia</option>
+            <option value="FJ">Fiji</option>
+            <option value="FI">Finland</option>
+            <option value="FR">France</option>
+            <option value="GA">Gabon</option>
+            <option value="GM">Gambia</option>
+            <option value="GE">Georgia</option>
+            <option value="DE">Germany</option>
+            <option value="GH">Ghana</option>
+            <option value="GR">Greece</option>
+            <option value="GD">Grenada</option>
+            <option value="GT">Guatemala</option>
+            <option value="GN">Guinea</option>
+            <option value="GW">Guinea-Bissau</option>
+            <option value="GY">Guyana</option>
+            <option value="HT">Haiti</option>
+            <option value="HN">Honduras</option>
+            <option value="HU">Hungary</option>
+            <option value="IS">Iceland</option>
+            <option value="IN">India</option>
+            <option value="ID">Indonesia</option>
+            <option value="IR">Iran</option>
+            <option value="IQ">Iraq</option>
+            <option value="IE">Ireland</option>
+            <option value="IL">Israel</option>
+            <option value="IT">Italy</option>
+            <option value="JM">Jamaica</option>
+            <option value="JP">Japan</option>
+            <option value="JO">Jordan</option>
+            <option value="KZ">Kazakhstan</option>
+            <option value="KE">Kenya</option>
+            <option value="KI">Kiribati</option>
+            <option value="KW">Kuwait</option>
+            <option value="KG">Kyrgyzstan</option>
+            <option value="LA">Laos</option>
+            <option value="LV">Latvia</option>
+            <option value="LB">Lebanon</option>
+            <option value="LS">Lesotho</option>
+            <option value="LR">Liberia</option>
+            <option value="LY">Libya</option>
+            <option value="LI">Liechtenstein</option>
+            <option value="LT">Lithuania</option>
+            <option value="LU">Luxembourg</option>
+            <option value="MG">Madagascar</option>
+            <option value="MW">Malawi</option>
+            <option value="MY">Malaysia</option>
+            <option value="MV">Maldives</option>
+            <option value="ML">Mali</option>
+            <option value="MT">Malta</option>
+            <option value="MH">Marshall Islands</option>
+            <option value="MR">Mauritania</option>
+            <option value="MU">Mauritius</option>
+            <option value="MX">Mexico</option>
+            <option value="FM">Micronesia</option>
+            <option value="MD">Moldova</option>
+            <option value="MC">Monaco</option>
+            <option value="MN">Mongolia</option>
+            <option value="ME">Montenegro</option>
+            <option value="MA">Morocco</option>
+            <option value="MZ">Mozambique</option>
+            <option value="MM">Myanmar</option>
+            <option value="NA">Namibia</option>
+            <option value="NR">Nauru</option>
+            <option value="NP">Nepal</option>
+            <option value="NL">Netherlands</option>
+            <option value="NZ">New Zealand</option>
+            <option value="NI">Nicaragua</option>
+            <option value="NE">Niger</option>
+            <option value="NG">Nigeria</option>
+            <option value="KP">North Korea</option>
+            <option value="MK">North Macedonia</option>
+            <option value="NO">Norway</option>
+            <option value="OM">Oman</option>
+            <option value="PK">Pakistan</option>
+            <option value="PW">Palau</option>
+            <option value="PS">Palestine</option>
+            <option value="PA">Panama</option>
+            <option value="PG">Papua New Guinea</option>
+            <option value="PY">Paraguay</option>
+            <option value="PE">Peru</option>
+            <option value="PH">Philippines</option>
+            <option value="PL">Poland</option>
+            <option value="PT">Portugal</option>
+            <option value="QA">Qatar</option>
+            <option value="RO">Romania</option>
+            <option value="RU">Russia</option>
+            <option value="RW">Rwanda</option>
+            <option value="KN">Saint Kitts and Nevis</option>
+            <option value="LC">Saint Lucia</option>
+            <option value="VC">Saint Vincent and the Grenadines</option>
+            <option value="WS">Samoa</option>
+            <option value="SM">San Marino</option>
+            <option value="ST">Sao Tome and Principe</option>
+            <option value="SA">Saudi Arabia</option>
+            <option value="SN">Senegal</option>
+            <option value="RS">Serbia</option>
+            <option value="SC">Seychelles</option>
+            <option value="SL">Sierra Leone</option>
+            <option value="SG">Singapore</option>
+            <option value="SK">Slovakia</option>
+            <option value="SI">Slovenia</option>
+            <option value="SB">Solomon Islands</option>
+            <option value="SO">Somalia</option>
+            <option value="ZA">South Africa</option>
+            <option value="KR">South Korea</option>
+            <option value="SS">South Sudan</option>
+            <option value="ES">Spain</option>
+            <option value="LK">Sri Lanka</option>
+            <option value="SD">Sudan</option>
+            <option value="SR">Suriname</option>
+            <option value="SE">Sweden</option>
+            <option value="CH">Switzerland</option>
+            <option value="SY">Syria</option>
+            <option value="TW">Taiwan</option>
+            <option value="TJ">Tajikistan</option>
+            <option value="TZ">Tanzania</option>
+            <option value="TH">Thailand</option>
+            <option value="TL">Timor-Leste</option>
+            <option value="TG">Togo</option>
+            <option value="TO">Tonga</option>
+            <option value="TT">Trinidad and Tobago</option>
+            <option value="TN">Tunisia</option>
+            <option value="TR">Turkey</option>
+            <option value="TM">Turkmenistan</option>
+            <option value="TV">Tuvalu</option>
+            <option value="UG">Uganda</option>
+            <option value="UA">Ukraine</option>
+            <option value="AE">United Arab Emirates</option>
+            <option value="GB">United Kingdom</option>
+            <option value="US">United States</option>
+            <option value="UY">Uruguay</option>
+            <option value="UZ">Uzbekistan</option>
+            <option value="VU">Vanuatu</option>
+            <option value="VA">Vatican City</option>
+            <option value="VE">Venezuela</option>
+            <option value="VN">Vietnam</option>
+            <option value="YE">Yemen</option>
+            <option value="ZM">Zambia</option>
+            <option value="ZW">Zimbabwe</option>
+          </select>
+        </label>
+
+        <button class="btn start" style="width: 211px">
+          Search
+          <img src="SVG.png" style="display: inline" alt="" />
+        </button>
+      </div>
+      <div class="note">
+        <div class="disclaimer-icon">i</div>
+
+        <div class="text-black-small">
+          <p style="font-size: 12px">
+            Here you can browse through a list of countries to find out if they
+            accept an IDP
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="countries-sections">
+      <div class="countries-page">
+        <div class="continent-tabs">
+          <button
+            class="continent-tab active"
+            onclick="filterByContinent('africa')"
+          >
+            Africa
+          </button>
+          <button class="continent-tab" onclick="filterByContinent('asia')">
+            Asia
+          </button>
+          <button class="continent-tab" onclick="filterByContinent('europe')">
+            Europe
+          </button>
+          <button class="continent-tab" onclick="filterByContinent('oceania')">
+            Oceania
+          </button>
+          <button
+            class="continent-tab"
+            onclick="filterByContinent('north-america')"
+          >
+            North America
+          </button>
+          <button
+            class="continent-tab"
+            onclick="filterByContinent('south-america')"
+          >
+            South America
+          </button>
+        </div>
+        <div class="countries-grid" id="countriesGrid">
+          Countries will be populated by JavaScript
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="left">
+        <div>
+          <h2>Trusted by Drivers Worldwide</h2>
+          <div class="rating-row-testimonials">
+            <span
+              class="text-black-small"
+              style="
+                font-family: Inter;
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 12px;
+                leading-trim: NONE;
+                line-height: 16px;
+                letter-spacing: 0%;
+                vertical-align: middle;
+              "
+              >Excellent</span
+            >
+            <div class="rating">
+              <img src="stars.png" alt="" />
+            </div>
+            <p
+              class="text-black-small"
+              style="font-weight: 700; font-size: 14px"
+            >
+              <u>1278+</u> reviews on
+            </p>
+            <span class="rating-value"
+              ><img src="star single.png" alt=""
+            /></span>
+            <span style="font-size: 15px; color: #4b5563">Trustpilot</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- New testimonial cards -->
+      <div class="testimonial-cards">
+        <div class="card">
+          <img
+            src="stars.png"
+            alt="stars"
+            style="width: 123px; height: 22px; margin-bottom: 14px"
+          />
+
+          <h3>Very easy to use and reliable</h3>
+          <p>
+            “The service is simple to use, and I’m really impressed by how
+            reliable it is. Everything was handled quickly, and I can now move
+            forward with my plans without any worries. Highly recommended!”
+          </p>
+          <span class="name"> Liam, UK</span>
+        </div>
+
+        <div class="card">
+          <img
+            src="stars.png"
+            alt="stars"
+            style="width: 123px; height: 22px; margin-bottom: 14px"
+          />
+
+          <h3>Exceptional customer service, great experience</h3>
+          <p>
+            “The team is incredibly responsive and answered all my questions
+            thoroughly. They made the whole process smooth and stress-free. I
+            couldn’t have asked for better service. 5 stars from me!”
+          </p>
+          <span class="name"> Sara, Canada</span>
+        </div>
+
+        <div class="card">
+          <img
+            src="stars.png"
+            alt="stars"
+            style="width: 123px; height: 22px; margin-bottom: 14px"
+          />
+
+          <h3>Fast and efficient support</h3>
+          <p>
+            “Quick, professional, and very helpful. The support team provided
+            clear answers and guided me through the steps. I’ll definitely be
+            using this again. Thank you!”
+          </p>
+          <span class="name"> Carlos, Spain</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container grid">
+        <div>
+          <h2 class="start-text">
+            From home to abroad, your
+            <span class="accent-word">driving freedom</span> stays with you
+          </h2>
+
+          <button class="btn btn-start">Get Started</button>
+          <img class="getstarted" src="getstarted.png" alt="" />
+          <img class="getstarted-invert" src="getstarted.png" alt="" />
+        </div>
+        <div class="cta-figure">
+          <img
+            src="traveler holding IDP.png"
+            alt="Traveler holding IDP (placeholder)"
+          />
+          <img class="crown" src="crown.png" alt="" />
+
+          <img class="curly" src="curlyVector.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container foot-top">
+        <div class="destinations">
+          <strong style="margin-right: 8px; color: #e5e7eb"
+            >Popular Destinations</strong
+          >
+          <div class="countries">
+            <span class="pill"
+              ><img src="https://flagcdn.com/us.svg" alt="US" /> United
+              States</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/tr.svg" alt="Turkey" />
+              Turkey</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/ru.svg" alt="Russia" />
+              Russia</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/gb.svg" alt="UK" /> United
+              Kingdom</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/no.svg" alt="Norway" />
+              Norway</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/cz.svg" alt="Czech" /> Czech</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/ma.svg" alt="Morocco" />
+              Morocco</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/fr.svg" alt="France" />
+              France</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="container foot-mid">
+        <div>
+          <div class="logo" style="margin-bottom: 10px">
+            <div class="logo-text" style="color: #ffffff">
+              <img src="logo.png" alt="" />
+            </div>
+          </div>
+          <p class="legal">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form.
+          </p>
+          <div
+            style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap"
+          >
+            <img src="assets/pay-visa.png" alt="" style="height: 18px" /><img
+              src="assets/pay-mc.png"
+              alt=""
+              style="height: 18px"
+            />
+            <img src="assets/pay-amex.png" alt="" style="height: 18px" /><img
+              src="assets/pay-pp.png"
+              alt=""
+              style="height: 18px"
+            />
+          </div>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="#">Driving Guides</a></li>
+            <li><a href="#">Billing Statement</a></li>
+            <li><a href="#">Countries</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Need help?</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Customer care</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms of use</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container foot-bottom">
+        <div>
+          <p class="legal-disclaimer">
+            Legal Disclaimer: IDA Service is not associated with or a
+            representative of the American Automobile Association, Inc (AAA) and
+            does not assert any government agency status. Your purchase pertains
+            to a translation document and does not serve as a substitute for a
+            valid Driving License.
+          </p>
+        </div>
+        <div class="foot-bottom-right">
+          <div class="legal">© 2025 IDP. All rights reserved.</div>
+          <div class="lang lang-footer">EN / USD ▾</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const chips = document.querySelectorAll(".chip")
+      const printPrice = document.querySelector(".print-price")
+      const digitalPrice = document.querySelector(".digital-price")
+
+      chips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          // remove active from all chips
+          chips.forEach(c => c.classList.remove("active"))
+          // add active to clicked one
+          chip.classList.add("active")
+
+          // read prices from chip
+          const print = chip.getAttribute("data-print")
+          const digital = chip.getAttribute("data-digital")
+
+          // update DOM
+          printPrice.textContent = print + "$"
+          digitalPrice.textContent = digital + "$"
+        })
+      })
+      // Add this to your existing JavaScript
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu")
+        menu.classList.toggle("active")
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const chips = document.querySelectorAll(".chip")
+
+        // Set first chip as active by default
+        if (chips.length > 0) {
+          chips[0].classList.add("active")
+        }
+
+        chips.forEach(chip => {
+          chip.addEventListener("click", function () {
+            // Remove active class from all chips
+            chips.forEach(c => c.classList.remove("active"))
+            // Add active class to clicked chip
+            this.classList.add("active")
+
+            // Optional: Update prices based on selection
+            const period = this.textContent
+            console.log("Selected:", period)
+            // You can add price update logic here
+          })
+        })
+      })
+      // FAQ accordion (no animations)
+      document.querySelectorAll(".faq-q").forEach(q => {
+        q.addEventListener("click", () => {
+          const item = q.parentElement
+          const open = item.classList.contains("open")
+          document
+            .querySelectorAll(".faq-item")
+            .forEach(i => i.classList.remove("open"))
+          if (!open) item.classList.add("open")
+        })
+      })
+    </script>
+    <script>
+      // Countries data organized by continent
+      const countriesData = {
+        africa: [
+          { name: "Angola", code: "ao" },
+          { name: "Algeria", code: "dz" },
+          { name: "Benin", code: "bj" },
+          { name: "Botswana", code: "bw" },
+          { name: "Burkina Faso", code: "bf" },
+          { name: "Burundi", code: "bi" },
+          { name: "Cameroon", code: "cm" },
+          { name: "Cape Verde", code: "cv" },
+          { name: "Chad", code: "td" },
+          { name: "Comoros", code: "km" },
+          { name: "Congo", code: "cg" },
+          { name: "Djibouti", code: "dj" },
+          { name: "Egypt", code: "eg" },
+          { name: "Equatorial Guinea", code: "gq" },
+          { name: "Eritrea", code: "er" },
+          { name: "Eswatini", code: "sz" },
+          { name: "Ethiopia", code: "et" },
+          { name: "Gabon", code: "ga" },
+          { name: "Gambia", code: "gm" },
+          { name: "Ghana", code: "gh" },
+          { name: "Guinea", code: "gn" },
+          { name: "Guinea-Bissau", code: "gw" },
+          { name: "Ivory Coast", code: "ci" },
+          { name: "Kenya", code: "ke" },
+          { name: "Lesotho", code: "ls" },
+          { name: "Liberia", code: "lr" },
+          { name: "Libya", code: "ly" },
+          { name: "Madagascar", code: "mg" },
+          { name: "Malawi", code: "mw" },
+          { name: "Mali", code: "ml" },
+          { name: "Mauritania", code: "mr" },
+          { name: "Mauritius", code: "mu" },
+          { name: "Morocco", code: "ma" },
+          { name: "Mozambique", code: "mz" }
+        ],
+        asia: [
+          { name: "Afghanistan", code: "af" },
+          { name: "Bangladesh", code: "bd" },
+          { name: "Bhutan", code: "bt" },
+          { name: "Brunei", code: "bn" },
+          { name: "Cambodia", code: "kh" },
+          { name: "China", code: "cn" },
+          { name: "India", code: "in" },
+          { name: "Indonesia", code: "id" },
+          { name: "Japan", code: "jp" },
+          { name: "Kazakhstan", code: "kz" },
+          { name: "Kyrgyzstan", code: "kg" },
+          { name: "Laos", code: "la" },
+          { name: "Malaysia", code: "my" },
+          { name: "Maldives", code: "mv" },
+          { name: "Mongolia", code: "mn" },
+          { name: "Myanmar", code: "mm" },
+          { name: "Nepal", code: "np" },
+          { name: "North Korea", code: "kp" },
+          { name: "Pakistan", code: "pk" },
+          { name: "Philippines", code: "ph" },
+          { name: "Singapore", code: "sg" },
+          { name: "South Korea", code: "kr" },
+          { name: "Sri Lanka", code: "lk" },
+          { name: "Taiwan", code: "tw" },
+          { name: "Tajikistan", code: "tj" },
+          { name: "Thailand", code: "th" },
+          { name: "Timor-Leste", code: "tl" },
+          { name: "Turkmenistan", code: "tm" },
+          { name: "Uzbekistan", code: "uz" },
+          { name: "Vietnam", code: "vn" }
+        ],
+        europe: [
+          { name: "Albania", code: "al" },
+          { name: "Austria", code: "at" },
+          { name: "Belarus", code: "by" },
+          { name: "Belgium", code: "be" },
+          { name: "Bosnia and Herzegovina", code: "ba" },
+          { name: "Bulgaria", code: "bg" },
+          { name: "Croatia", code: "hr" },
+          { name: "Czech Republic", code: "cz" },
+          { name: "Denmark", code: "dk" },
+          { name: "Estonia", code: "ee" },
+          { name: "Finland", code: "fi" },
+          { name: "France", code: "fr" },
+          { name: "Germany", code: "de" },
+          { name: "Greece", code: "gr" },
+          { name: "Hungary", code: "hu" },
+          { name: "Iceland", code: "is" },
+          { name: "Ireland", code: "ie" },
+          { name: "Italy", code: "it" },
+          { name: "Latvia", code: "lv" },
+          { name: "Lithuania", code: "lt" },
+          { name: "Luxembourg", code: "lu" },
+          { name: "Malta", code: "mt" },
+          { name: "Moldova", code: "md" },
+          { name: "Monaco", code: "mc" },
+          { name: "Montenegro", code: "me" },
+          { name: "Netherlands", code: "nl" },
+          { name: "North Macedonia", code: "mk" },
+          { name: "Norway", code: "no" },
+          { name: "Poland", code: "pl" },
+          { name: "Portugal", code: "pt" },
+          { name: "Romania", code: "ro" },
+          { name: "Russia", code: "ru" },
+          { name: "Serbia", code: "rs" },
+          { name: "Slovakia", code: "sk" },
+          { name: "Slovenia", code: "si" },
+          { name: "Spain", code: "es" },
+          { name: "Sweden", code: "se" },
+          { name: "Switzerland", code: "ch" },
+          { name: "Turkey", code: "tr" },
+          { name: "Ukraine", code: "ua" },
+          { name: "United Kingdom", code: "gb" }
+        ],
+        oceania: [
+          { name: "Australia", code: "au" },
+          { name: "Fiji", code: "fj" },
+          { name: "Kiribati", code: "ki" },
+          { name: "Marshall Islands", code: "mh" },
+          { name: "Micronesia", code: "fm" },
+          { name: "Nauru", code: "nr" },
+          { name: "New Zealand", code: "nz" },
+          { name: "Palau", code: "pw" },
+          { name: "Papua New Guinea", code: "pg" },
+          { name: "Samoa", code: "ws" },
+          { name: "Solomon Islands", code: "sb" },
+          { name: "Tonga", code: "to" },
+          { name: "Tuvalu", code: "tv" },
+          { name: "Vanuatu", code: "vu" }
+        ],
+        "north-america": [
+          { name: "Antigua and Barbuda", code: "ag" },
+          { name: "Bahamas", code: "bs" },
+          { name: "Barbados", code: "bb" },
+          { name: "Belize", code: "bz" },
+          { name: "Canada", code: "ca" },
+          { name: "Costa Rica", code: "cr" },
+          { name: "Cuba", code: "cu" },
+          { name: "Dominica", code: "dm" },
+          { name: "Dominican Republic", code: "do" },
+          { name: "El Salvador", code: "sv" },
+          { name: "Grenada", code: "gd" },
+          { name: "Guatemala", code: "gt" },
+          { name: "Haiti", code: "ht" },
+          { name: "Honduras", code: "hn" },
+          { name: "Jamaica", code: "jm" },
+          { name: "Mexico", code: "mx" },
+          { name: "Nicaragua", code: "ni" },
+          { name: "Panama", code: "pa" },
+          { name: "Saint Kitts and Nevis", code: "kn" },
+          { name: "Saint Lucia", code: "lc" },
+          { name: "Saint Vincent and the Grenadines", code: "vc" },
+          { name: "Trinidad and Tobago", code: "tt" },
+          { name: "United States", code: "us" }
+        ],
+        "south-america": [
+          { name: "Argentina", code: "ar" },
+          { name: "Bolivia", code: "bo" },
+          { name: "Brazil", code: "br" },
+          { name: "Chile", code: "cl" },
+          { name: "Colombia", code: "co" },
+          { name: "Ecuador", code: "ec" },
+          { name: "Guyana", code: "gy" },
+          { name: "Paraguay", code: "py" },
+          { name: "Peru", code: "pe" },
+          { name: "Suriname", code: "sr" },
+          { name: "Uruguay", code: "uy" },
+          { name: "Venezuela", code: "ve" }
+        ]
+      }
+
+      let currentContinent = "africa" // default
+      let allCountries = []
+
+      // Flatten countriesData into a single array with normalized continent keys
+      Object.keys(countriesData || {}).forEach(contKey => {
+        const list = Array.isArray(countriesData[contKey])
+          ? countriesData[contKey]
+          : []
+        allCountries = allCountries.concat(
+          list.map(country => ({
+            ...country,
+            continent: contKey.toLowerCase()
+          }))
+        )
+      })
+
+      function renderCountries(countries) {
+        const grid = document.getElementById("countriesGrid")
+        grid.innerHTML = ""
+
+        if (!countries || countries.length === 0) {
+          grid.innerHTML = '<div class="no-countries">No countries found.</div>'
+          return
+        }
+
+        countries.forEach(country => {
+          const code = String(country.code || "").toLowerCase()
+          const countryItem = document.createElement("div")
+          countryItem.className = "country-item"
+          countryItem.innerHTML = `
+      <img src="https://flagcdn.com/${code}.svg" alt="${country.name}" class="country-flag">
+      <span class="country-name">${country.name}</span>
+    `
+          countryItem.addEventListener("click", () => selectCountry(country))
+          grid.appendChild(countryItem)
+        })
+      }
+
+      function filterByContinent(continent) {
+        currentContinent = continent
+
+        // Update active tab
+        document.querySelectorAll(".continent-tab").forEach(tab => {
+          tab.classList.remove("active")
+        })
+        // Highlight the clicked button
+        const activeButton = document.querySelector(
+          `.continent-tab[onclick="filterByContinent('${continent}')"]`
+        )
+        if (activeButton) activeButton.classList.add("active")
+
+        // Filter countries
+        const countriesToShow =
+          continent === "all"
+            ? allCountries.slice()
+            : allCountries.filter(c => c.continent === continent)
+
+        renderCountries(countriesToShow)
+      }
+
+      function selectCountry(country) {
+        alert(`You selected ${country.name}`)
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Load Africa by default
+        filterByContinent("africa")
+      })
+    </script>
+  </body>
+</html>

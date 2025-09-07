@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payment Successful - International Driver Office</title>
+    <meta
+      name="description"
+      content="Your payment has been successfully processed. Thank you for choosing International Driver Office."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      /* ====== Base / Reset ====== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Ubuntu, "Helvetica Neue", Arial, sans-serif;
+        color: #0f172a;
+        line-height: 1.6;
+        background: #ffffff;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      :root {
+        --brand: #1457ff;
+        --brand-2: #0ea5e9;
+        --green: #10b981;
+        --ink: #0f172a;
+        --muted: #475569;
+        --muted-2: #64748b;
+        --line: #e2e8f0;
+        --bg-soft: #f8fafc;
+        --card: #ffffff;
+        --radius: 16px;
+        --container: 1476px;
+      }
+
+      .container {
+        margin-inline: auto;
+        max-width: var(--container);
+        width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+        box-sizing: border-box;
+      }
+
+      /* ====== Top Notice Bar ====== */
+      .topbar {
+        background: #0ada8f;
+        color: #052e16;
+        font-weight: 500;
+        text-align: center;
+        padding: 10px 20px;
+        letter-spacing: 0.2px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 47px;
+      }
+
+      .big-arrow {
+        font-size: 52px;
+        margin-left: 2px;
+        line-height: 1;
+        display: inline-block;
+        padding-bottom: 8px;
+      }
+
+      /* ====== Header ====== */
+      .header-wrapper {
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header {
+        padding: 20px 0;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        position: relative;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .lang-currency {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .lang-selector,
+      .currency {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .globe-icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* ====== Main Content ====== */
+      .main-content {
+        padding: 80px 0 120px 0;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .success-container {
+        max-width: 811px;
+        width: 100%;
+        padding: 40px 20px;
+        border: 0.8px solid #dee2e6;
+        border-radius: 20px;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .success-title {
+        font-family: Matter, sans-serif;
+        font-weight: 500;
+        font-size: 24px;
+        margin: 0 0 24px 0;
+      }
+
+      .success-message {
+        font-family: Matter, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #636363;
+        margin: 0 0 40px 0;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn {
+        padding: 16px 32px;
+        border-radius: 20px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 16px;
+        text-decoration: none;
+        display: inline-block;
+        font-family: Matter, sans-serif;
+        margin-bottom: 16px;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .btn.primary {
+        background: var(--brand);
+        color: white;
+      }
+
+      .btn.primary:hover {
+        background: #0f46e6;
+      }
+
+      .back-link {
+        color: var(--muted);
+        background-color: white;
+        border: 1px solid #dee2e6;
+      }
+
+      .back-link:hover {
+        color: var(--ink);
+      }
+
+      /* ====== Footer ====== */
+      .footer {
+        background: white;
+        color: var(--muted);
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 20px;
+        border: 1px solid #d0def1;
+        padding: 34px 36px 44px 36px;
+        margin: 0 125px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .footer-links a {
+        color: var(--muted);
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: var(--ink);
+      }
+
+      .security-badges {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding: 24px 0 119px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* ====== Responsive ====== */
+      @media (max-width: 1024px) {
+        .footer-content {
+          margin: 0 40px;
+          padding: 24px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-content {
+          padding: 60px 0 80px 0;
+        }
+
+        .success-title {
+          font-size: 20px;
+        }
+
+        .success-message {
+          font-size: 14px;
+        }
+
+        .nav {
+          justify-content: start;
+        }
+
+        .actions {
+          position: static;
+          transform: none;
+          margin-left: auto;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+          margin: 0 16px;
+        }
+
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .topbar {
+          font-size: 14px;
+          padding: 8px 10px;
+        }
+
+        .big-arrow {
+          font-size: 36px;
+          padding-bottom: 4px;
+        }
+
+        .success-title {
+          font-size: 18px;
+        }
+
+        .success-message {
+          font-size: 13px;
+        }
+
+        .btn {
+          padding: 14px 20px;
+          font-size: 14px;
+        }
+
+        .footer-content {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top notice -->
+    <div class="topbar">
+      Get Your Permit – Start Driving the World Today!
+      <span class="big-arrow">→</span>
+    </div>
+
+    <!-- Header -->
+    <div class="header-wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="nav">
+            <div class="logo">
+              <img
+                src="Group 1000003602 1.png"
+                alt="International Driver Office"
+              />
+            </div>
+
+            <div class="actions">
+              <div class="lang-currency">
+                <div class="lang-selector">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="globe-icon"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15 15 0 0 1 0 20"></path>
+                    <path d="M12 2a15 15 0 0 0 0 20"></path>
+                  </svg>
+                  <select
+                    style="
+                      border: none;
+                      background: none;
+                      color: inherit;
+                      font-size: inherit;
+                      cursor: pointer;
+                    "
+                  >
+                    <option>English</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                  </select>
+                </div>
+                <div class="currency">
+                  <select
+                    style="
+                      border: none;
+                      background: none;
+                      color: inherit;
+                      font-size: inherit;
+                      cursor: pointer;
+                    "
+                  >
+                    <option>$ (USD)</option>
+                    <option>€ (EUR)</option>
+                    <option>£ (GBP)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div class="success-container">
+          <h1 class="success-title">Payment Successful</h1>
+          <p class="success-message">
+            Your transaction has successfully been completed. Check more details
+            of this transaction is your transaction history. We value you!
+          </p>
+          <button href="#" class="btn primary">View order details</button>
+          <br />
+          <button class="btn back-link">Back to home</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms and Conditions</a>
+            <span>|</span>
+            <a href="#">Help</a>
+          </div>
+          <div class="security-badges">
+            <img src="cards.svg" alt="Security badges" />
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">All Right Reserved - © 2025</div>
+    </footer>
+  </body>
+</html>

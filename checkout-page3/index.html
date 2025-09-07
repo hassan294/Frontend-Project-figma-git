@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>International Driver Office — Upload Photos</title>
+    <meta
+      name="description"
+      content="Upload your photos for your International Driving Permit application."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ====== Base / Reset ====== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Ubuntu, "Helvetica Neue", Arial, sans-serif;
+        color: #0f172a;
+        line-height: 1.6;
+        background: #ffffff;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      :root {
+        --brand: #1457ff;
+        --brand-2: #0ea5e9;
+        --green: #10b981;
+        --ink: #0f172a;
+        --muted: #475569;
+        --muted-2: #64748b;
+        --line: #e2e8f0;
+        --bg-soft: #f8fafc;
+        --card: #ffffff;
+        --radius: 16px;
+        --container: 1476px;
+      }
+
+      .container {
+        margin-inline: auto;
+        max-width: var(--container);
+        padding: 0px 24px;
+      }
+
+      /* ====== Top Notice Bar ====== */
+      .topbar {
+        background: #0ada8f;
+        color: #052e16;
+        font-weight: 700;
+        text-align: center;
+        padding: 10px 20px;
+        letter-spacing: 0.2px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        max-height: 47px;
+      }
+
+      .big-arrow {
+        font-size: 52px;
+        margin-left: 2px;
+        line-height: 1;
+        display: inline-block;
+        padding-bottom: 8px;
+      }
+
+      /* ====== Header / Nav ====== */
+      .header-wrapper {
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header {
+        padding: 20px 0;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        position: relative;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .lang-currency {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .lang-selector {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .globe-icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      .currency {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      /* ====== Main Content ====== */
+      .main-content {
+        padding: 47px 0;
+        min-height: 70vh;
+      }
+
+      .checkout-container {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 15px;
+        align-items: start;
+      }
+
+      .form-section {
+        background: white;
+        border: 0.8px solid var(--line);
+        border-radius: 20px;
+        padding: 40px;
+      }
+
+      .form-section h2 {
+        margin: 0 0 8px 0;
+        font-family: Matter;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 22px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+      }
+
+      .form-subtitle {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 32px;
+        color: #464c50;
+        font-family: Matter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0%;
+      }
+
+      .form-grid {
+        display: grid;
+        gap: 32px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .form-label {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ink);
+        font-family: Matter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 20px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: #191e24;
+      }
+
+      .upload-area {
+        border: 2px dashed var(--line);
+        border-radius: 12px;
+        padding: 60px 20px;
+        text-align: center;
+        background: #fafbfc;
+        transition: all 0.2s;
+        cursor: pointer;
+        position: relative;
+
+        flex: 1; /* 👈 take all remaining width */
+        height: 250px; /* match preview box height */
+        display: flex; /* keep content centered */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .upload-area:hover {
+        border-color: var(--brand);
+        background: #f8faff;
+      }
+
+      .upload-area.dragover {
+        border-color: var(--brand);
+        background: #f0f7ff;
+      }
+
+      .upload-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 16px;
+        opacity: 0.5;
+      }
+
+      .upload-text {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .upload-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Added e-signature section styling */
+      .signature-section {
+        margin-top: 40px;
+      }
+
+      .signature-options {
+        display: flex;
+        gap: 12px;
+      }
+
+      .signature-btn {
+        padding: 12px 24px;
+        border: 1px solid #dee2e6;
+        border-radius: 20px;
+        background: white;
+        color: var(--muted);
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 14px;
+        font-family: "Matter";
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0%;
+      }
+
+      .signature-btn:hover {
+        border-color: var(--brand);
+        color: var(--brand);
+      }
+
+      .signature-btn.active {
+        border: 1px solid #0168de;
+      }
+
+      .signature-canvas {
+        width: 100%;
+        height: 200px;
+        border: 2px solid var(--line);
+        border-radius: 8px;
+        margin-top: 16px;
+        display: none;
+      }
+
+      .signature-canvas.active {
+        display: block;
+      }
+
+      .form-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        border-radius: 20px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 14px;
+      }
+
+      .btn.primary {
+        background: #0168de;
+        font-family: Matter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 20px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+
+        color: white;
+      }
+
+      .btn.primary:hover {
+        background: #0f46e6;
+      }
+
+      .btn.secondary {
+        background: transparent;
+        font-family: Matter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        leading-trim: NONE;
+        line-height: 20px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+
+        border: none;
+        padding: 12px 0;
+      }
+
+      .btn.secondary:hover {
+        color: var(--ink);
+      }
+
+      /* ====== Right Sidebar ====== */
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .progress-card {
+        background: white;
+        border: 0.8px solid var(--line);
+        border-radius: 16px;
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .progress-ring {
+        width: 67px;
+        height: 67px;
+        border-radius: 50%;
+        background: conic-gradient(#0168de 0% 50%, #abcce6 50% 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .progress-inner {
+        width: 51px;
+        height: 51px;
+        border-radius: 50%;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 14px;
+        color: #262626;
+        position: absolute;
+      }
+
+      .progress-text {
+        flex: 1;
+      }
+
+      .progress-title {
+        color: #0168de;
+        font-family: Matter;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 100%;
+        letter-spacing: 0.1px;
+
+        margin-bottom: 4px;
+      }
+
+      .progress-subtitle {
+        color: #98a2b3;
+        font-family: Matter;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 14px;
+        leading-trim: NONE;
+        line-height: 22px;
+        letter-spacing: 0.4px;
+      }
+
+      .info-card {
+        background: white;
+        border: 0.8px solid var(--line);
+        border-radius: 16px;
+        padding: 24px;
+        color: var(--ink);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .info-card .imagegirl {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .benefits-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .benefits-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        font-family: "Matter";
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: #464c50;
+      }
+
+      .check-icon {
+        width: 20px;
+        height: 20px;
+        background: #10b981;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 12px;
+        flex-shrink: 0;
+      }
+
+      .support-section {
+        background: white;
+        border: 0.8px solid var(--line);
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      .support-section h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0 0 16px 0;
+        font-family: "Matter";
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #464c50;
+      }
+
+      .support-buttons {
+        display: flex;
+        gap: 12px;
+      }
+
+      .support-buttons .btn {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .btn.secondary-outline {
+        background: white;
+        color: var(--brand);
+        border: 2px solid var(--brand);
+      }
+
+      .btn.secondary-outline:hover {
+        background: var(--brand);
+        color: white;
+      }
+
+      /* ====== Footer ====== */
+      .footer {
+        background: white;
+        color: var(--muted);
+        margin: 0 125px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 20px;
+        border: 1px solid #d0def1;
+        padding: 34px 36px 44px 36px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .footer-links a {
+        color: var(--muted);
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: var(--ink);
+      }
+
+      .security-badges {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding: 24px 0 119px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* ====== Responsive ====== */
+      @media (max-width: 768px) {
+        .checkout-container {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .signature-options {
+          flex-direction: column;
+        }
+
+        .support-buttons {
+          flex-direction: column;
+        }
+        .nav {
+          justify-content: space-between;
+        }
+        .footer {
+          margin: 0 20px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+        }
+
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+      .input-show {
+        width: 250px;
+        height: 250px;
+        border: 0.6px solid #dadada;
+        border-radius: 20px;
+      }
+      .above-input {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        flex: 1;
+      }
+
+      /* ---------- Responsive helper: container padding ---------- */
+      @media (max-width: 1250px) {
+        .container {
+          padding: 0 24px;
+          max-width: 1188px;
+        }
+
+        /* make hero/grid gap and margins breathe */
+        .checkout-container {
+          gap: 24px;
+        }
+        .blog-hero-content,
+        .terms-hero .container {
+          padding: 0 16px;
+        }
+      }
+
+      /* ---------- Tablet / medium screens (<= 1024px) ---------- */
+      @media (max-width: 1024px) {
+        /* Stack the main columns (form + sidebar) vertically */
+        .checkout-container {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+
+        /* Form and sidebar full-width within container */
+        .form-section,
+        .sidebar {
+          width: 100%;
+          padding: 24px;
+        }
+
+        /* Upload row: stack input preview + upload area vertically */
+        .above-input {
+          gap: 16px;
+          align-items: stretch;
+        }
+
+        .input-show {
+          height: 200px;
+        }
+
+        .upload-area {
+          width: 100%;
+          height: 200px;
+          padding: 28px 16px;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* Reduce signature canvas height slightly */
+        .signature-canvas {
+          height: 180px;
+        }
+
+        /* Sidebar cards should center and use full width */
+        .sidebar {
+          display: block;
+        }
+        .progress-card,
+        .info-card,
+        .support-section {
+          margin-bottom: 18px;
+        }
+
+        /* progress ring smaller */
+        .progress-ring {
+          width: 56px;
+          height: 56px;
+        }
+        .progress-inner {
+          width: 44px;
+          height: 44px;
+          font-size: 13px;
+        }
+
+        /* Make support buttons stack */
+        .support-buttons {
+          flex-direction: row;
+          gap: 12px;
+        }
+        .support-buttons .btn {
+          flex: 1;
+        }
+
+        /* Form navigation — keep buttons side-by-side but smaller */
+        .form-navigation {
+          flex-direction: row;
+          gap: 12px;
+        }
+        .form-navigation .btn {
+          padding: 10px 16px;
+        }
+      }
+
+      /* ---------- Mobile / small screens (<= 768px) ---------- */
+      @media (max-width: 768px) {
+        /* Global spacing */
+        .main-content {
+          padding: 28px 0;
+        }
+        .container {
+          padding: 0 16px;
+        }
+
+        /* Make header compact */
+        .nav {
+          gap: 12px;
+          padding: 0 8px;
+        }
+        .actions {
+          right: 6px;
+        }
+
+        /* Stack form and sidebar */
+        .checkout-container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        /* Form section padding reduced */
+        .form-section {
+          padding: 20px;
+          border-radius: 12px;
+        }
+
+        /* Upload area + preview stacked full width */
+        .above-input {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .input-show {
+          width: 100%;
+          height: 180px;
+          border-radius: 12px;
+        }
+        .upload-area {
+          width: 100%;
+          height: 180px;
+          padding: 20px;
+        }
+
+        /* Make upload icon smaller and centered */
+        .upload-icon {
+          width: 40px;
+          height: 40px;
+          margin-bottom: 10px;
+        }
+
+        /* signature canvas responsive */
+        .signature-canvas {
+          height: 160px;
+        }
+
+        /* Buttons become full width stacked where appropriate */
+        .form-navigation {
+          flex-direction: column-reverse;
+          gap: 12px;
+        }
+        .form-navigation .btn {
+          width: 100%;
+        }
+
+        .support-section {
+          padding: 16px;
+        }
+        .support-buttons {
+          flex-direction: column;
+        }
+        .support-buttons .btn {
+          width: 100%;
+        }
+
+        /* Sidebar cards: make them block-level stacking */
+        .progress-card,
+        .info-card {
+          padding: 16px;
+        }
+        .info-card .imagegirl {
+          height: auto;
+          max-height: 220px;
+          object-fit: cover;
+        }
+
+        /* Footer compact */
+        .footer {
+          margin: 0 12px;
+        }
+        .footer-content {
+          padding: 20px;
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+
+      /* ---------- Very small phones (<= 480px) ---------- */
+      @media (max-width: 480px) {
+        .topbar {
+          font-size: 14px;
+          padding: 8px 12px;
+        }
+        .big-arrow {
+          display: none;
+        }
+
+        .form-section {
+          padding: 16px;
+        }
+        .form-subtitle {
+          font-size: 13px;
+        }
+
+        .upload-area {
+          padding: 16px;
+        }
+        .upload-text {
+          font-size: 13px;
+        }
+
+        .progress-ring {
+          width: 48px;
+          height: 48px;
+        }
+        .progress-inner {
+          width: 36px;
+          height: 36px;
+          font-size: 12px;
+        }
+
+        .btn {
+          font-size: 14px;
+          padding: 10px 14px;
+        }
+      }
+
+      /* ---------- Accessibility / utility improvements ---------- */
+      /* Ensure upload-area input covers full clickable area */
+      .upload-area .upload-input {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Ensure form-grid items don't overflow */
+      .form-grid {
+        grid-auto-rows: minmax(auto, auto);
+      }
+
+      /* Helpful: prevent horizontal scroll from large fixed margins */
+      body {
+        overflow-x: clip;
+      }
+      .tick {
+        margin-right: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top notice -->
+    <div class="topbar">
+      Get Your Permit – Start Driving the World Today!
+      <span class="big-arrow">→</span>
+    </div>
+
+    <!-- Header -->
+    <div class="header-wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="nav">
+            <div class="logo">
+              <img
+                src="Group 1000003602 1.png"
+                alt="International Driver Office"
+              />
+            </div>
+
+            <div class="actions">
+              <div class="lang-currency">
+                <div class="lang-selector">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="globe-icon"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15 15 0 0 1 0 20"></path>
+                    <path d="M12 2a15 15 0 0 0 0 20"></path>
+                  </svg>
+                  <select
+                    style="
+                      border: none;
+                      background: none;
+                      color: inherit;
+                      font-size: inherit;
+                      cursor: pointer;
+                    "
+                  >
+                    <option>English</option>
+                    <option>Spanish</option>
+                    <option>French</option>
+                  </select>
+                </div>
+                <div class="currency">
+                  <select
+                    style="
+                      border: none;
+                      background: none;
+                      color: inherit;
+                      font-size: inherit;
+                      cursor: pointer;
+                    "
+                  >
+                    <option>$ (USD)</option>
+                    <option>€ (EUR)</option>
+                    <option>£ (GBP)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div class="checkout-container">
+          <div class="form-section">
+            <h2>Upload photos</h2>
+            <p class="form-subtitle">
+              Photo should resemble a license or passport photo with your head
+              straight.
+            </p>
+
+            <form class="form-grid">
+              <!-- Added upload photos section -->
+              <div class="form-group">
+                <label class="form-label">Upload photos</label>
+                <div class="above-input">
+                  <div class="input-show"></div>
+                  <div
+                    class="upload-area"
+                    onclick="document.getElementById('photo-upload').click()"
+                  >
+                    <img src="document-upload.svg" alt="" />
+
+                    <div class="upload-text">Drop files here to upload</div>
+                    <input
+                      type="file"
+                      id="photo-upload"
+                      class="upload-input"
+                      accept="image/*"
+                      multiple
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Added driver's license upload section -->
+              <div class="form-group">
+                <label class="form-label"
+                  >Photo of your drivers license (front and back)</label
+                >
+                <div class="above-input">
+                  <div class="input-show"></div>
+                  <div
+                    class="upload-area"
+                    onclick="document.getElementById('license-upload').click()"
+                  >
+                    <img src="document-upload.svg" alt="" />
+
+                    <div class="upload-text">Drop files here to upload</div>
+                    <input
+                      type="file"
+                      id="license-upload"
+                      class="upload-input"
+                      accept="image/*"
+                      multiple
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Added third upload area -->
+              <div class="form-group">
+                <div class="above-input">
+                  <div class="input-show"></div>
+
+                  <div
+                    class="upload-area"
+                    onclick="document.getElementById('additional-upload').click()"
+                  >
+                    <img src="document-upload.svg" alt="" />
+
+                    <div class="upload-text">Drop files here to upload</div>
+                    <input
+                      type="file"
+                      id="additional-upload"
+                      class="upload-input"
+                      accept="image/*"
+                      multiple
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Added e-signature section -->
+              <div class="signature-section">
+                <div
+                  class="above-input"
+                  style="align-items: center; justify-content: space-between"
+                >
+                  <label class="form-label">E-signature</label>
+                  <div class="signature-options">
+                    <button
+                      type="button"
+                      class="signature-btn active"
+                      data-method="draw"
+                    >
+                      Draw
+                    </button>
+                    <button
+                      type="button"
+                      class="signature-btn"
+                      data-method="type"
+                    >
+                      Type
+                    </button>
+                    <button
+                      type="button"
+                      class="signature-btn"
+                      data-method="upload"
+                    >
+                      Upload
+                    </button>
+                  </div>
+                </div>
+                <canvas
+                  class="signature-canvas active"
+                  id="signature-canvas"
+                ></canvas>
+              </div>
+            </form>
+
+            <!-- Navigation -->
+            <div class="form-navigation">
+              <button type="button" class="btn secondary">previous</button>
+              <button
+                type="submit"
+                class="btn primary"
+                style="font-weight: 400"
+              >
+                Next →
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="sidebar">
+            <!-- Updated progress to show 2 of 4 -->
+            <div class="progress-card">
+              <div class="progress-ring">
+                <div class="progress-inner">2 of 4</div>
+              </div>
+
+              <div class="progress-text">
+                <div class="progress-title">Upload photos</div>
+                <div class="progress-subtitle">
+                  Photo should resemble a license or passport photo with your
+                  head straight.
+                </div>
+              </div>
+            </div>
+
+            <!-- Info Card -->
+            <div class="info-card">
+              <img
+                class="imagegirl"
+                src="checkout 1 image.svg"
+                alt="Woman with IDP"
+              />
+
+              <ul class="benefits-list">
+                <li>
+                  <img class="tick" src="li mark.svg" alt="" />
+                  Instant Approval
+                </li>
+                <li>
+                  <img class="tick" src="li mark.svg" alt="" />
+                  Valid for 1-3 Years
+                </li>
+                <li>
+                  <img class="tick" src="li mark.svg" alt="" />
+                  Full Refund Guarantee
+                </li>
+                <li>
+                  <img class="tick" src="li mark.svg" alt="" />
+                  Recognized in 150+ Countries
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support Section -->
+            <div class="support-section">
+              <h3>Do you need assistance?</h3>
+              <div class="support-buttons">
+                <button class="btn primary">Live chat</button>
+                <button class="btn secondary-outline">Email</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms and Conditions</a>
+            <span>|</span>
+            <a href="#">Help</a>
+          </div>
+          <div class="security-badges">
+            <img src="cards.svg" alt="Security badges" />
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">All Right Reserved - © 2025</div>
+    </footer>
+
+    <script>
+      document.querySelectorAll(".upload-area").forEach(area => {
+        area.addEventListener("dragover", e => {
+          e.preventDefault()
+          area.classList.add("dragover")
+        })
+
+        area.addEventListener("dragleave", () => {
+          area.classList.remove("dragover")
+        })
+
+        area.addEventListener("drop", e => {
+          e.preventDefault()
+          area.classList.remove("dragover")
+          const files = e.dataTransfer.files
+          handleFiles(files, area)
+        })
+      })
+
+      function handleFiles(files, area) {
+        const fileList = Array.from(files)
+        const uploadText = area.querySelector(".upload-text")
+
+        if (fileList.length > 0) {
+          uploadText.textContent = `${fileList.length} file(s) selected`
+          area.style.borderColor = "var(--green)"
+          area.style.background = "#f0fdf4"
+        }
+      }
+
+      document.querySelectorAll(".signature-btn").forEach(btn => {
+        btn.addEventListener("click", function () {
+          document
+            .querySelectorAll(".signature-btn")
+            .forEach(b => b.classList.remove("active"))
+          this.classList.add("active")
+
+          const method = this.dataset.method
+          const canvas = document.getElementById("signature-canvas")
+
+          if (method === "draw") {
+            canvas.classList.add("active")
+            initializeCanvas()
+          } else {
+            canvas.classList.remove("active")
+          }
+        })
+      })
+
+      function initializeCanvas() {
+        const canvas = document.getElementById("signature-canvas")
+        const ctx = canvas.getContext("2d")
+        let isDrawing = false
+
+        canvas.addEventListener("mousedown", e => {
+          isDrawing = true
+          ctx.beginPath()
+          ctx.moveTo(e.offsetX, e.offsetY)
+        })
+
+        canvas.addEventListener("mousemove", e => {
+          if (isDrawing) {
+            ctx.lineTo(e.offsetX, e.offsetY)
+            ctx.stroke()
+          }
+        })
+
+        canvas.addEventListener("mouseup", () => {
+          isDrawing = false
+        })
+      }
+
+      // Initialize canvas on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        initializeCanvas()
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Terms and Conditions - International Driver Office</title>
+    <meta
+      name="description"
+      content="Terms and conditions for International Driver Office services and website usage."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ====== Base / Reset ====== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Ubuntu, "Helvetica Neue", Arial, sans-serif;
+        color: #0f172a;
+        line-height: 1.6;
+        background: #ffffff;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      :root {
+        --brand: #1457ff;
+        --brand-2: #0ea5e9;
+        --green: #10b981;
+        --ink: #0f172a;
+        --muted: #475569;
+        --muted-2: #64748b;
+        --line: #e2e8f0;
+        --bg-soft: #f8fafc;
+        --card: #ffffff;
+        --radius: 16px;
+        --container: 1140px;
+      }
+
+      .container {
+        margin-inline: auto;
+        padding: 0 20px;
+        max-width: var(--container);
+      }
+
+      /* ====== Top Notice Bar ====== */
+      .topbar {
+        background: #0ada8f;
+        color: #052e16;
+        font-weight: 700;
+        text-align: center;
+        padding: 10px 20px;
+        letter-spacing: 0.2px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        max-height: 47px;
+      }
+
+      .big-arrow {
+        font-size: 52px;
+        margin-left: 2px;
+        line-height: 1;
+        display: inline-block;
+        padding-bottom: 8px;
+      }
+
+      /* ====== Header / Nav ====== */
+      .header {
+        background: transparent;
+        backdrop-filter: blur(16px);
+        background: #0000004d;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 2rem;
+        gap: 20px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        white-space: nowrap;
+        color: white;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 26px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: white;
+        font-weight: 400;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .lang-currency {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 14px;
+        color: white;
+        font-weight: 400;
+      }
+
+      .currency i {
+        margin-left: 4px;
+        font-size: 12px;
+      }
+
+      .lang-selector {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .lang-selector svg {
+        width: 18px;
+        height: 18px;
+        color: white;
+        margin-right: 6px;
+        vertical-align: middle;
+      }
+
+      .btn {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: #0f172a;
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .btn.primary {
+        background: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+        width: 140px;
+        font-weight: 400;
+      }
+
+      /* ====== Terms Hero Section ====== */
+      .terms-hero {
+        background: linear-gradient(135deg, #1457ff 0%, #0ea5e9 100%);
+        color: white;
+        padding: 60px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .terms-hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .terms-hero-text {
+        flex: 1;
+        max-width: 600px;
+      }
+
+      .terms-hero h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0 0 16px 0;
+        line-height: 1.2;
+      }
+
+      .terms-hero p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      .terms-hero-image {
+        flex-shrink: 0;
+      }
+
+      .terms-hero-image img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      /* ====== Terms Content ====== */
+      .terms-content {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .terms-text {
+        max-width: 800px;
+        margin: 0 auto;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #475569;
+      }
+
+      .terms-text h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin: 40px 0 20px 0;
+        padding-top: 20px;
+      }
+
+      .terms-text h2:first-of-type {
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      .terms-text p {
+        margin: 0 0 20px 0;
+        text-align: justify;
+      }
+
+      /* ====== Footer ====== */
+      .footer {
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+        color: white;
+        padding: 60px 0 20px;
+      }
+
+      .foot-top {
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 40px;
+      }
+
+      .destinations {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .countries {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .pill {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .pill img {
+        width: 16px;
+        height: 12px;
+        object-fit: cover;
+        border-radius: 2px;
+      }
+
+      .foot-mid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .foot-mid h4 {
+        margin: 0 0 20px 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .foot-mid ul li {
+        margin-bottom: 12px;
+      }
+
+      .foot-mid ul li a {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+      }
+
+      .foot-mid ul li a:hover {
+        color: white;
+      }
+
+      .legal {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .foot-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 20px;
+      }
+
+      .foot-bottom-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .legal-disclaimer {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 12px;
+        line-height: 1.5;
+        max-width: 600px;
+      }
+
+      .lang-footer {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      /* ====== Mobile Responsive ====== */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .terms-hero-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .terms-hero h1 {
+          font-size: 2rem;
+        }
+
+        .terms-hero-image img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .terms-content {
+          padding: 40px 0;
+        }
+
+        .foot-mid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .foot-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+
+        .destinations {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top notice -->
+    <div class="topbar">
+      Get Your Permit – Start Driving the World Today!
+      <span class="big-arrow">→</span>
+    </div>
+
+    <!-- Header -->
+    <div class="header-wrapper">
+      <header class="header">
+        <div class="container nav">
+          <div class="logo">
+            <div class="logo">
+              <img src="logo.png" alt="Logo" />
+            </div>
+          </div>
+
+          <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Pricing</a>
+            <a href="#">Countries</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact us</a>
+            <a href="#">My account</a>
+          </nav>
+
+          <div class="actions">
+            <div class="lang-currency">
+              <span class="lang">
+                <div class="lang-selector">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="globe-icon"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15 15 0 0 1 0 20"></path>
+                    <path d="M12 2a15 15 0 0 0 0 20"></path>
+                  </svg>
+                  <span>English</span>
+                </div>
+              </span>
+              <span class="currency">
+                $ USD <i class="fas fa-chevron-down"></i>
+              </span>
+            </div>
+            <button class="btn primary">Apply Now</button>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Terms Hero Section -->
+    <section class="terms-hero">
+      <div class="container">
+        <div class="terms-hero-content">
+          <div class="terms-hero-text">
+            <h1>Normale Page (Terms and...)</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam nec
+              suscipit dui sedolma cursus nibh id risus ultrices convallis.
+            </p>
+          </div>
+          <div class="terms-hero-image">
+            <img
+              src="/placeholder.svg?height=200&width=200"
+              alt="Professional businessman"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+      <div class="container">
+        <div class="terms-text">
+          <p>
+            Your use of our website is governed by the following terms and
+            conditions ("Terms of Use"), as well as the ITA Office Privacy
+            Policy and other operating rules, policies, price schedules and
+            other supplemental terms and legal notices or conditions posted
+            throughout the website or presented to you individually during the
+            course of your use of the website (collectively, the "Terms"). The
+            Terms govern your use of the website and ITA Office reserves the
+            right to update or replace the Terms any time without notice. You
+            are advised to review the Terms for any changes when you visit the
+            website even if you have not received a notification of changes as
+            you are bound by them, even if you have not received them. Your
+            continued use of the website after such change constitutes your
+            acceptance of the Terms and any changes to such Terms. If at any
+            time you do not want to be bound by the Terms you should logout,
+            exit and cease using the website immediately.
+          </p>
+
+          <h2>Intended Use of Website</h2>
+          <p>
+            ITA Office is not a broker-dealer or placement agent. At no time
+            does ITA Office offer, broker, advise, purchase, sell or otherwise
+            transact in securities regulated by the SEC, CFTC or state or local
+            authorities. ITA Office does not accept, hold, custody or otherwise
+            transact in securities. ITA Office does not guarantee that a Company
+            seeking investment will achieve any level of success or that any
+            proposed investment will qualify under applicable federal and state
+            securities laws.
+          </p>
+
+          <p>
+            ITA Office is not a personal financial advisor. ITA Office, whether
+            through the website or otherwise, does not provide personal
+            financial advice, loans or credit, banking, consumer credit ratings,
+            credit decisions, financial products, brokerage accounts, insurance,
+            tax advice, legal advice, or financial or legal services of any
+            kind.
+          </p>
+
+          <p>
+            ITA Office does not guarantee any results to anyone. All users of
+            the website are responsible for making their own decisions to use
+            the website and for any activity taken on the website, including
+            without limitation registering and making an investment or
+            otherwise.
+          </p>
+
+          <h2>User Registration</h2>
+          <p>
+            If you are accepting the Terms on behalf of an organization or
+            entity, rather than in an individual capacity, you represent and
+            warrant that you are authorized to accept the Terms on that
+            organization or entity's behalf and bind them to these Terms (in
+            which case, the references to "you" and "your" in these Terms,
+            except for in this sentence, refer to that organization or entity).
+            Only real persons at or above the age of 18 may register for an
+            account and use the website. Registering for an account on the
+            website requires no commitment or obligation on the part of the
+            registered User to make any investment or seek any investment. All
+            information you provide to the website must be truthful, accurate
+            and complete in all material respects. Our registration process may
+            use third-party validation technology, including those provided by
+            third-party social media sites, to attempt to confirm your
+            qualification to use the website.
+          </p>
+
+          <p>
+            ITA Office may reject any application to register an individual or
+            an organization or entity for failure to achieve validation through
+            available methods or otherwise meet ITA Office's registration
+            requirements.
+          </p>
+
+          <p>
+            Your registration and the use of any third-party site is subject to
+            the terms and conditions and policies of such sites and ITA Office
+            is not responsible or liable for any harm resulting from the use or
+            misuse of those sites, including when such harm could or does affect
+            your account on this website or use of the website.
+          </p>
+
+          <h2>Registered Account Obligations</h2>
+          <p>
+            The named registered user of an account is the only person that may
+            use the account and it may not be transferred to anyone else.
+          </p>
+
+          <p>
+            You are responsible for maintaining the confidentiality of your
+            username and password and to periodically change your password to
+            maintain security. If you have concerns that your username or
+            password may have been compromised and suspect that unauthorized
+            access to your account on the website has occurred, you must
+            immediately contact ITA Office's investor support through a secure
+            method (which may not be through your website account).
+          </p>
+
+          <h2>Content Use Limitations</h2>
+          <p>
+            Your use of the website and its videos, webinars, images,
+            infographics, alerts, text, articles, assessments, checklists,
+            forms, ratings, design, data, software, photos, software,
+            trademarks, copyrights, and other information ("Content") may only
+            be used for the lawful and intended purposes expressly authorized by
+            ITA Office. If you access this website from outside the United
+            States, you are responsible for ensuring compliance with the laws of
+            your specific jurisdiction, as well as any restrictions that you may
+            be subject to by a department of the United States government. Any
+            misuse or unauthorized use of the website and its Content, or other
+            violations of the Terms may violate Applicable Law (see below),
+            including without limitation SEC regulations and applicable state
+            securities laws, copyright laws (including the Digital Millennium
+            Copyright Act), trademark laws, the laws of privacy, publicity,
+            identity theft and communications decency laws and regulations, in
+            which case ITA Office is authorized to terminate your account and
+            access to the website at any time and without notice and report you
+            to the appropriate authorities and other interested parties.
+          </p>
+
+          <h2>Prospective Investor Accounts</h2>
+          <p>
+            Any person or entity that is considering making an investment with a
+            Company that posts its fundraising plans on the website, or after
+            the fundraising plan becomes a qualified offering makes an
+            investment, does so at his or her own risk. IDA investment carries
+            risk that you may lose some or all of your investment. No Content on
+            the website is a replacement for performing your own due diligence,
+            exercising good judgment, and seeking financial, investment, tax or
+            legal advice from qualified and licensed professionals with
+            knowledge of your personal circumstances. Any registered financial,
+            legal or tax representatives that may be working for or with ITA
+            Office or a Company seeking investment through the website are not
+            your personal advisors and do not have knowledge about your personal
+            circumstances and anything they post is for informational purposes
+            only and may not be accurate or current and you agree that you shall
+            not rely on Content on the website in making personal decisions
+            about an investment or the potential legal, tax or financial
+            consequences of such investment. You are encouraged to seek personal
+            professional advice from qualified and licensed professionals.
+          </p>
+
+          <p>
+            You are solely responsible for your investment decisions. While you
+            may be asked about your identity, individual financial circumstances
+            and investment experience and sophistication during your engagement
+            with the website, ITA Office and its advisors and vendors are not
+            responsible to verify the veracity of the information that you
+            provide, even if you certify to its truth. This responsibility
+            review. Whether you are an "Accredited Investor," as such term is
+            defined under securities laws, or a non-accredited investor, or an
+            institutional investor, ITA Office and the Companies seeking
+            investment are relying on your representations with respect to your
+            investment experience, your Investment status and your eligibility
+            to invest. You may, further, be held personally liable for your
+            fraud, negligence and other bad acts that may result from any false
+            representations you make.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container foot-top">
+        <div class="destinations">
+          <strong style="margin-right: 8px; color: #e5e7eb"
+            >Popular Destinations</strong
+          >
+          <div class="countries">
+            <span class="pill"
+              ><img src="https://flagcdn.com/us.svg" alt="US" /> United
+              States</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/tr.svg" alt="Turkey" />
+              Turkey</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/ru.svg" alt="Russia" />
+              Russia</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/gb.svg" alt="UK" /> United
+              Kingdom</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/no.svg" alt="Norway" />
+              Norway</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/cz.svg" alt="Czech" /> Czech</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/ma.svg" alt="Morocco" />
+              Morocco</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/fr.svg" alt="France" />
+              France</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="container foot-mid">
+        <div>
+          <div class="logo" style="margin-bottom: 10px">
+            <div class="logo-text" style="color: #ffffff">
+              <img src="logo.png" alt="" />
+            </div>
+          </div>
+          <p class="legal">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form.
+          </p>
+          <div
+            style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap"
+          >
+            <img src="assets/pay-visa.png" alt="" style="height: 18px" />
+            <img src="assets/pay-mc.png" alt="" style="height: 18px" />
+            <img src="assets/pay-amex.png" alt="" style="height: 18px" />
+            <img src="assets/pay-pp.png" alt="" style="height: 18px" />
+          </div>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="#">Driving Guides</a></li>
+            <li><a href="#">Verify IDP</a></li>
+            <li><a href="#">Billing Statement</a></li>
+            <li><a href="#">Countries</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Need help?</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Customer care</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms of use</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container foot-bottom">
+        <div>
+          <p class="legal-disclaimer">
+            Legal Disclaimer: IDA Service is not associated with or a
+            representative of the American Automobile Association, Inc (AAA) and
+            does not assert any government agency status. Your purchase pertains
+            to a translation document and does not serve as a substitute for a
+            valid Driving License.
+          </p>
+        </div>
+        <div class="foot-bottom-right">
+          <div class="legal">© 2025 IDP. All rights reserved.</div>
+          <div class="lang lang-footer">EN / USD ▾</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>International Driver Office — Certified IDPs</title>
+    <meta
+      name="description"
+      content="Certified International Driving Permits — fast delivery, global validity. Apply online and get digital and physical copies."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ====== Base / Reset ====== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Ubuntu, "Helvetica Neue", Arial, sans-serif;
+        color: #0f172a;
+        line-height: 1.6;
+        background: #ffffff;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      :root {
+        --brand: #1457ff;
+        --brand-2: #0ea5e9;
+        --green: #10b981;
+        --ink: #0f172a;
+        --muted: #475569;
+        --muted-2: #64748b;
+        --line: #e2e8f0;
+        --bg-soft: #f8fafc;
+        --card: #ffffff;
+        --radius: 16px;
+        --container: 1140px;
+      }
+
+      .container {
+        margin-inline: auto;
+      }
+
+      /* ====== Top Notice Bar ====== */
+      .topbar {
+        background: #0ada8f;
+        color: #052e16;
+        font-weight: 700;
+        text-align: center;
+        padding: 10px 20px;
+        letter-spacing: 0.2px;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        max-height: 45px;
+      }
+      .permit-text {
+        width: 435px;
+        height: 25px;
+      }
+
+      .big-arrow {
+        font-size: 52px;
+        margin-left: 2px;
+        line-height: 1;
+        display: inline-block;
+        padding-bottom: 8px;
+      }
+
+      /* ====== Header / Nav ====== */
+      .header {
+        background: #ffffff;
+        position: sticky;
+        top: 0;
+        z-index: 40;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 2rem;
+        gap: 20px;
+        height: 71px;
+        border-bottom: 1px solid black;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        white-space: nowrap;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-weight: 400;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .lang-currency {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .currency i {
+        margin-left: 4px;
+        font-size: 12px;
+      }
+
+      .lang-selector {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .lang-selector svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+        vertical-align: middle;
+      }
+
+      .btn {
+        border: 1px solid var(--line);
+        background: #fff;
+        color: #0f172a;
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .btn.primary {
+        background: var(--brand);
+        border-color: var(--brand);
+        color: #fff;
+        width: 140px;
+        font-weight: 400;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+      }
+
+      .mobile-menu-btn span {
+        width: 24px;
+        height: 2px;
+        background: white;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 85px;
+        /* left: -100%; */
+        width: 25%;
+        height: 100vh;
+        background: #043c9a;
+        z-index: 50;
+        transition: left 0.3s ease;
+        padding: 80px 20px 20px;
+      }
+
+      .mobile-menu.active {
+        display: block;
+        right: 0;
+      }
+
+      .mobile-menu .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .mobile-menu nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .mobile-menu nav a {
+        color: white;
+        font-size: 18px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .menu-btn:hover {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+      .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 32px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .close-btn:hover {
+        transform: rotate(90deg);
+      }
+
+      /* ====== Terms Hero Section ====== */
+      .terms-hero {
+        color: white;
+        padding: 50px 0 35px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .terms-hero .container {
+        max-width: 1250px; /* or any width you want */
+        margin: 0 auto; /* centers horizontally */
+        padding: 0 20px; /* some side padding for smaller screens */
+        background-image: url("terms-back.svg");
+        border-radius: 20px; /* 🔹 rounded corners */
+
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .terms-hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+      }
+
+      .terms-hero-text {
+        flex: 1;
+        max-width: 768px;
+        padding-left: 47px;
+      }
+
+      .terms-hero h1 {
+        font-family: "DM Sans";
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 35px;
+        line-height: 100%;
+        letter-spacing: 0px;
+      }
+
+      .terms-hero p {
+        font-family: DM Sans;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0px;
+      }
+
+      .terms-hero-image img {
+        padding-right: 65px;
+      }
+
+      /* ====== Terms Content ====== */
+      .terms-content {
+        background: white;
+      }
+
+      .terms-text {
+        max-width: 1250px;
+        margin: 0 auto;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #475569;
+      }
+      @media (max-width: 1250px) {
+        .terms-text {
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+        .terms-hero-image img {
+          padding-right: 30px;
+        }
+        .terms-hero {
+          background-size: contain; /* keep full image visible */
+        }
+      }
+      @media (max-width: 768px) {
+        .terms-hero h1 {
+          font-family: "DM Sans";
+          font-weight: 500;
+          font-style: Bold;
+          font-size: 25px;
+          line-height: 100%;
+          letter-spacing: 0px;
+        }
+        .terms-hero-image img {
+          width: 80%;
+          height: 80%;
+          padding-right: 5px;
+        }
+        .terms-hero-image img {
+          width: 160px;
+          height: 80%;
+          padding-right: 5px;
+        }
+
+        .terms-hero .container {
+          border-radius: 20px; /* 🔹 rounded corners */
+
+          padding: 0;
+          background-size: cover; /* 🔹 fills the area */
+          background-position: center; /* keep it centered */
+        }
+        .terms-hero p {
+          font-family: DM Sans;
+          font-weight: 300;
+          font-style: Regular;
+          font-size: 13px;
+          line-height: 24px;
+          letter-spacing: 0px;
+        }
+        .terms-hero {
+          background-size: contain; /* keep full image visible */
+          padding-top: 0;
+          margin-top: 0;
+        }
+      }
+      .terms-text h2 {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 35px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        margin: 40px 0 40px 0;
+        color: #303a42;
+      }
+
+      .terms-text p {
+        text-align: justify;
+        font-family: "Poppins";
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: justify;
+      }
+
+      /* FAQ Styles */
+      .faq-container {
+        padding-top: 50px;
+        max-width: 1234px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+      }
+      .parent-container {
+        padding-top: 20px;
+        display: flex;
+        gap: 18px;
+        justify-content: center; /* centers horizontally */
+        align-items: center; /* centers vertically */
+      }
+
+      .faq-item {
+        background: white;
+        overflow: hidden;
+        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+        transition: all 0.3s ease;
+      }
+
+      .faq-item.active {
+        background: #eff6ff;
+        border: 1px solid #dbeafe;
+      }
+
+      .faq-question {
+        display: flex;
+        align-items: center;
+        padding: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question:hover {
+        background: rgba(0, 212, 170, 0.05);
+      }
+
+      .faq-number {
+        font-size: 18px;
+        font-weight: 600;
+        color: #94a3b8;
+        margin-right: 24px;
+        min-width: 30px;
+      }
+
+      .faq-item.active .faq-number {
+        color: #1e40af;
+      }
+
+      .faq-title {
+        flex: 1;
+        font-size: 18px;
+        font-weight: 600;
+        color: #1e293b;
+        padding-left: 250px;
+        font-family: Typography/Font Family/Primary Font;
+        font-weight: 600;
+        font-style: Semi Bold;
+        font-size: Typography/Font Size/Display 4;
+        line-height: 135%;
+        letter-spacing: 0%;
+      }
+      @media (max-width: 1020px) {
+        .faq-title {
+          padding-left: 220px;
+        }
+        .faq-answer {
+          padding-left: 220px !important;
+        }
+      }
+      @media (max-width: 768px) {
+        .faq-title {
+          padding-left: 0px !important;
+        }
+        .faq-answer {
+          padding-left: 0px !important;
+        }
+      }
+
+      .faq-item.active .faq-title {
+        color: #0168de;
+      }
+      .faq-icon {
+        font-size: 20px;
+        color: #94a3b8;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+        color: #1e40af;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        padding-left: 250px;
+        font-family: Typography/Font Family/Primary Font;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: Typography/Font Size/Paragraph/Small;
+        line-height: 150%;
+        letter-spacing: 0%;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 200px;
+      }
+
+      .faq-answer-content {
+        padding: 0 24px 24px 78px;
+        color: #64748b;
+        line-height: 1.6;
+        max-width: 700px;
+      }
+
+      .faq-close {
+        position: absolute;
+        top: 24px;
+        right: 18px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: #0168de;
+        cursor: pointer;
+        display: none;
+      }
+
+      .faq-item.active .faq-close {
+        display: block;
+      }
+
+      .faq-item.active .faq-icon {
+        display: none;
+      }
+
+      .faq-item {
+        position: relative;
+      }
+
+      .arrow {
+        cursor: pointer;
+        font-size: 20px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        user-select: none;
+        transition: background 0.3s;
+        font-weight: bolder;
+      }
+
+      .arrow.left {
+        color: #888;
+      }
+
+      .arrow.right {
+        color: #3e66df;
+      }
+      .countries-section {
+        position: relative;
+      }
+      .countries-page {
+        background-image: url("Group 1000003826[1].png");
+
+        background-size: 94% auto; /* 90% width, auto height */
+        height: 727px; /* keep your height */
+        border-radius: 20px; /* 🔹 rounded corners */
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 75px;
+      }
+
+      .arrow.right:hover {
+        background-color: #0056b3;
+      }
+
+      .arrow.left:hover {
+        background-color: #ddd;
+      }
+
+      /* ====== FAQ ====== */
+      .faq {
+        background-image: url("Group 1000003826[1].png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: #f8f8f8;
+        padding: 70px 0;
+      }
+
+      .faq-wrap {
+        max-width: 860px;
+        margin: 20px auto 0;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--line);
+        background: #fff;
+      }
+
+      .faq-q {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 18px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .faq-item.open .faq-q {
+        color: #007bff;
+        border-left: 3px solid blue;
+        background-color: #e6f0ff;
+      }
+      .faq-item.open .faq-q img {
+        transform: rotate(180deg);
+      }
+
+      .faq-a {
+        display: none;
+        padding: 0 18px 18px;
+        color: var(--muted-2);
+      }
+
+      .faq-item.open .faq-a {
+        display: block;
+        border-left: 3px solid blue;
+        background-color: #e6f0ff;
+      }
+
+      .faq-item.open .caret {
+        transform: rotate(180deg);
+      }
+
+      /* ====== CTA ====== */
+      .cta {
+        background-image: url("200[1].png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 50px 90px 0px 90px !important;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        height: 308px;
+      }
+
+      .cta::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            90deg,
+            rgb(255 255 255 / 4%) 1px,
+            transparent 1px
+          ),
+          linear-gradient(rgb(255 255 255 / 6%) 1px, #ffffff00 1px);
+        background-size: 65px 65px;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .cta .grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 20px;
+        align-items: start;
+      }
+
+      .cta h2 {
+        /* padding-top: 25px; */
+        font-size: 34px;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .cta .accent-word {
+        color: #22c55e;
+      }
+
+      .cta .btn {
+        background: #04da8d;
+        border-color: #22c55e;
+        margin-top: 40px;
+        color: white;
+        width: 140px;
+        margin-left: 32px;
+      }
+
+      .cta-figure {
+        justify-self: end;
+      }
+
+      .cta-figure img {
+        position: relative;
+        max-height: 260px;
+        border-radius: 16px;
+        z-index: 10;
+      }
+
+      .btn-start {
+        position: relative;
+      }
+
+      .getstarted {
+        position: absolute;
+        top: 195px;
+        left: 260px;
+      }
+
+      .getstarted-invert {
+        transform: scale(-1);
+        position: absolute;
+        top: 248px;
+        left: 100px;
+      }
+
+      .curly {
+        top: -128px;
+        left: -105px;
+        z-index: 5 !important;
+      }
+
+      .crown {
+        top: -296px;
+        right: -136px;
+      }
+
+      /* ====== Footer ====== */
+      .footer {
+        background-image: url("Footer.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: #cbd5e1;
+        margin-top: 0;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      .foot-top {
+        padding: 36px 0;
+      }
+
+      .destinations {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 14px;
+        flex-direction: column;
+      }
+
+      .countries {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .pill {
+        padding: 6px 10px;
+        color: #ffffff;
+        font-size: 14px;
+      }
+
+      .pill img {
+        width: 28px;
+        display: inline-block;
+        margin-left: 5px;
+      }
+
+      .foot-mid {
+        padding: 36px 0;
+        display: grid;
+        grid-template-columns: 2fr repeat(3, 0.7fr);
+        gap: 24px;
+      }
+
+      .foot-mid h4 {
+        font-size: 15px;
+        font-weight: 500;
+        color: #e5e7eb;
+        margin: 0 0 10px;
+      }
+      .container-text {
+        /* padding: 0 75px; */
+      }
+
+      .foot-mid a {
+        color: white;
+        font-size: 12px;
+      }
+
+      .foot-mid a:hover {
+        color: #e5e7eb;
+      }
+
+      .legal {
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      .legal-disclaimer {
+        font-size: 12px;
+        color: #94a3b8;
+        text-align: center;
+        margin-top: 0px;
+      }
+
+      .foot-bottom {
+        border-top: 1px solid white;
+        padding: 16px 0;
+      }
+
+      .foot-bottom-right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .lang {
+        border-radius: 12px;
+        padding: 8px 12px;
+      }
+
+      .lang-footer {
+        border: 1px solid white;
+        border-radius: 30px;
+        padding: 5px;
+      }
+
+      /* ====== Responsive Design ====== */
+
+      /* Tablets (1024px and below) */
+      @media (max-width: 1220px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .pricing {
+          padding: 30px 160px;
+        }
+
+        .second-section {
+          padding: 0px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .split {
+          grid-template-columns: 1fr;
+          gap: 26px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .cta .grid {
+          grid-template-columns: 1fr;
+        }
+        .nav-links {
+          display: none;
+        }
+        .mobile-menu-btn {
+          display: flex;
+        }
+        .mobile-menu-btn span {
+          background: black;
+        }
+        .pricing {
+          padding: 30px 160px;
+        }
+        .second-section {
+          padding: 0px;
+        }
+
+        .pricing {
+          padding: 35px 50px;
+        }
+
+        .feature-block {
+          margin: 50px;
+        }
+
+        .how {
+          margin-left: 30px;
+          margin-right: 30px;
+        }
+
+        .testimonials {
+          margin-left: 30px;
+          margin-right: 30px;
+          padding: 50px 0;
+        }
+
+        .footer {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        .cta {
+          padding: 40px 30px 0px 30px !important;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .foot-mid {
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+
+        .countries {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 10px;
+          padding: 0;
+        }
+      }
+
+      /* Mobile phones (768px and below) */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 15px;
+        }
+
+        .topbar {
+          font-size: 14px;
+          padding: 8px 15px;
+        }
+
+        .big-arrow {
+          font-size: 28px;
+        }
+        .kb-card {
+          padding-top: 250px;
+        }
+
+        .nav {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        .second-section {
+          padding: 0px;
+        }
+
+        .logo img {
+          width: 120px;
+        }
+
+        .actions {
+          gap: 10px;
+        }
+
+        .lang-currency {
+          display: none;
+        }
+
+        .btn.primary {
+          width: 100px;
+          font-size: 14px;
+          padding: 8px 12px;
+        }
+
+        .feature-block {
+          margin: 30px 0;
+          padding-top: 40px;
+        }
+
+        .fb-title {
+          font-size: 24px;
+          text-align: center;
+        }
+
+        .fb-sub {
+          text-align: center;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .stat {
+          align-items: center;
+          text-align: center;
+        }
+
+        .stat-card {
+          justify-content: center;
+        }
+
+        .how {
+          margin: 30px 15px;
+        }
+
+        .section-title {
+          font-size: 24px;
+          text-align: center;
+        }
+
+        .section-sub {
+          text-align: center;
+          max-width: 100%;
+        }
+
+        .steps {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          padding-bottom: 40px;
+        }
+
+        .step-text {
+          max-width: 280px;
+        }
+
+        .pricing {
+          padding: 40px 20px;
+        }
+        .mobile-menu.active {
+          width: 60%;
+        }
+
+        .section-title-faq {
+          font-size: 24px;
+        }
+
+        .section-sub-faq {
+          max-width: 100%;
+          font-size: 14px;
+        }
+
+        .toggle-row {
+          flex-direction: column;
+          gap: 8px;
+          padding: 8px;
+          max-width: 300px;
+        }
+
+        .chip {
+          padding: 14px 16px;
+        }
+
+        .cards {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .card {
+          max-width: 100%;
+          width: 100%;
+        }
+
+        .price {
+          font-size: 36px;
+        }
+
+        .testimonials {
+          position: relative;
+          flex-direction: column;
+          margin: 20px 15px;
+          padding: 40px 0;
+          gap: 20px;
+        }
+
+        .left h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+
+        .rating-row-testimonials {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        .review-card {
+          padding: 20px;
+          margin-bottom: 15px;
+        }
+
+        .review-card h3 {
+          font-size: 16px;
+        }
+
+        .review-card p {
+          font-size: 14px;
+        }
+
+        .reviewer img {
+          width: 40px;
+          height: 40px;
+        }
+
+        .testimonial-page {
+          position: absolute;
+          justify-content: center;
+          bottom: 0;
+        }
+
+        .faq {
+          padding: 40px 0;
+        }
+
+        .faq-wrap {
+          margin: 15px;
+        }
+
+        .faq-q {
+          padding: 14px 16px;
+          font-size: 14px;
+        }
+
+        .faq-a {
+          padding: 0 16px 16px;
+          font-size: 14px;
+        }
+
+        .cta {
+          padding: 30px 20px 0px 20px !important;
+        }
+
+        .cta h2 {
+          font-size: 24px;
+          max-width: 100%;
+          text-align: center;
+          padding-top: 0;
+        }
+
+        .cta .btn {
+          width: 120px;
+          margin: 20px auto 0;
+          display: block;
+        }
+
+        .cta-figure {
+          justify-self: center;
+          text-align: center;
+        }
+
+        .cta-figure img {
+          max-height: 200px;
+        }
+
+        .getstarted,
+        .getstarted-invert,
+        .crown,
+        .curly {
+          display: none;
+        }
+
+        .footer {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .foot-top {
+          padding: 20px 0;
+        }
+
+        .destinations {
+          text-align: center;
+        }
+
+        .countries {
+          /* flex-direction: column; */
+          align-items: center;
+          gap: 8px;
+          padding: 0;
+        }
+
+        .pill {
+          font-size: 12px;
+          padding: 4px 8px;
+        }
+
+        .pill img {
+          width: 20px;
+        }
+
+        .foot-mid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+          text-align: center;
+        }
+
+        .foot-mid h4 {
+          font-size: 18px;
+        }
+
+        .foot-mid a {
+          font-size: 11px;
+        }
+
+        .legal-disclaimer {
+          font-size: 10px;
+          text-align: left;
+        }
+
+        .foot-bottom-right {
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
+
+        .lang-footer {
+          font-size: 12px;
+        }
+      }
+      .section-title {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 35px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        text-align: center;
+      }
+
+      .section-subtitle {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        text-align: center;
+        padding: 0px 25px 0px 25px;
+      }
+
+      /* Very small phones (480px and below) */
+      @media (max-width: 480px) {
+        .section-title,
+        .section-title-faq {
+          font-size: 20px;
+        }
+
+        .cta h2 {
+          font-size: 20px;
+        }
+
+        .price {
+          font-size: 32px;
+        }
+
+        .review-card {
+          padding: 15px;
+        }
+
+        .foot-mid {
+          padding: 20px 0;
+        }
+      }
+      .start-text {
+        max-width: 370px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top notice -->
+    <div class="topbar">
+      <p class="">Get Your Permit – Start Driving the World Today!</p>
+      <span class="big-arrow">→</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container nav">
+        <div class="logo">
+          <div class="logo">
+            <img src="Group 1000003602 1.png" alt="Logo" />
+          </div>
+        </div>
+
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Pricing</a>
+          <a href="#">Countries</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact us</a>
+          <a href="#">About us</a>
+        </nav>
+
+        <div class="actions">
+          <div class="lang-currency">
+            <span class="lang">
+              <div class="lang-selector">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="globe-icon"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15 15 0 0 1 0 20"></path>
+                  <path d="M12 2a15 15 0 0 0 0 20"></path>
+                </svg>
+
+                <span>English</span>
+              </div>
+            </span>
+            <span class="currency">
+              $ USD <i class="fas fa-chevron-down"></i>
+            </span>
+          </div>
+          <button class="btn primary">Apply Now</button>
+          <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+          <button class="close-btn" onclick="toggleMobileMenu()">
+            &times;
+          </button>
+          <nav>
+            <a href="#">Home</a>
+            <a href="#">Pricing</a>
+            <a href="#">Countries</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact us</a>
+            <a href="#">My account</a>
+            <div style="margin-top: 20px">
+              <button class="btn primary" style="width: 100%">Apply Now</button>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Terms Hero Section -->
+    <section class="terms-hero">
+      <div class="container">
+        <div class="terms-hero-content">
+          <div class="terms-hero-text">
+            <h1>Normale Page (Terms and...)</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit etiam nec
+              suscipit dui sedolma cursus nibh id risus ultrices convallis.
+            </p>
+          </div>
+          <div class="terms-hero-image">
+            <img
+              src="pleased-handsome-businessman-pointing-person-making-good-point-nice-job-praising-employee-saying-well-done.svg"
+              alt="Professional businessman"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+      <div class="container">
+        <div class="terms-text">
+          <p>
+            Your use of our website is governed by the following terms and
+            conditions (“Terms of Use”), as well as the ITA Office Privacy
+            Policy and other operating rules, minimum qualifications and
+            cautions posted throughout the website or presented to you
+            individually during the course of your use of the website
+            (collectively, the “Terms”). The Terms govern your use of the
+            website and ITA Office reserves the right to update or replace the
+            Terms any time without notice. You are advised to review the Terms
+            for any changes when you visit the website even if you have not
+            received a notification of changes as you are bound by them even if
+            you have not reviewed them. Your viewing and use of the website
+            after such change constitutes your acceptance of the Terms and any
+            changes to such terms. If at any time you do not want to be bound by
+            the Terms you should logout, exit and cease using the website
+            immediately.
+          </p>
+
+          <h2>Intended Use of Website</h2>
+          <p>
+            ITA Office is not a broker-dealer or placement agent. At no time
+            does ITA Office offer, broker, advise, purchase, sell or otherwise
+            transact in securities regulated by the SEC, CFTC or state or local
+            authorities. ITA Office does not accept, hold, custody or otherwise
+            transact in securities. ITA Office does not guarantee that a Company
+            seeking investment will achieve any level of success or that any
+            proposed investment will qualify under applicable federal and state
+            securities laws.
+          </p>
+
+          <p>
+            ITA Office is not a personal financial advisor. ITA Office, whether
+            through the website or otherwise, does not provide personal
+            financial advice, loans or credit, banking, consumer credit ratings,
+            credit decisions, financial products, brokerage accounts, insurance,
+            tax advice, legal advice, or financial or legal services of any
+            kind.
+          </p>
+
+          <p>
+            ITA Office does not guarantee any results to anyone. All users of
+            the website are responsible for making their own decisions to use
+            the website and for any activity taken on the website, including
+            without limitation registering and making an investment or
+            otherwise.
+          </p>
+
+          <h2>User Registration</h2>
+          <p>
+            If you are accepting the Terms on behalf of an organization or
+            entity, rather than in an individual capacity, you represent and
+            warrant that you are authorized to accept the Terms on that
+            organization or entity's behalf and bind them to these Terms (in
+            which case, the references to "you" and "your" in these Terms,
+            except for in this sentence, refer to that organization or entity).
+            Only real persons at or above the age of 18 may register for an
+            account and use the website. Registering for an account on the
+            website requires no commitment or obligation on the part of the
+            registered User to make any investment or seek any investment. All
+            information you provide to the website must be truthful, accurate
+            and complete in all material respects. Our registration process may
+            use third-party validation technology, including those provided by
+            third-party social media sites, to attempt to confirm your
+            qualification to use the website.
+          </p>
+
+          <p>
+            ITA Office may reject any application to register an individual or
+            an organization or entity for failure to achieve validation through
+            available methods or otherwise meet ITA Office's registration
+            requirements.
+          </p>
+
+          <p>
+            Your registration and the use of any third-party site is subject to
+            the terms and conditions and policies of such sites and ITA Office
+            is not responsible or liable for any harm resulting from the use or
+            misuse of those sites, including when such harm could or does affect
+            your account on this website or use of the website.
+          </p>
+
+          <h2>Registered Account Obligations</h2>
+          <p>
+            The named registered user of an account is the only person that may
+            use the account and it may not be transferred to anyone else.
+          </p>
+
+          <p>
+            You are responsible for maintaining the confidentiality of your
+            username and password and to periodically change your password to
+            maintain security. If you have concerns that your username or
+            password may have been compromised and suspect that unauthorized
+            access to your account on the website has occurred, you must
+            immediately contact ITA Office's investor support through a secure
+            method (which may not be through your website account).
+          </p>
+
+          <h2>Content Use Limitations</h2>
+          <p>
+            Your use of the website and its videos, webinars, images,
+            infographics, alerts, text, articles, assessments, checklists,
+            forms, ratings, design, data, software, photos, software,
+            trademarks, copyrights, and other information ("Content") may only
+            be used for the lawful and intended purposes expressly authorized by
+            ITA Office. If you access this website from outside the United
+            States, you are responsible for ensuring compliance with the laws of
+            your specific jurisdiction, as well as any restrictions that you may
+            be subject to by a department of the United States government. Any
+            misuse or unauthorized use of the website and its Content, or other
+            violations of the Terms may violate Applicable Law (see below),
+            including without limitation SEC regulations and applicable state
+            securities laws, copyright laws (including the Digital Millennium
+            Copyright Act), trademark laws, the laws of privacy, publicity,
+            identity theft and communications decency laws and regulations, in
+            which case ITA Office is authorized to terminate your account and
+            access to the website at any time and without notice and report you
+            to the appropriate authorities and other interested parties.
+          </p>
+
+          <h2>Prospective Investor Accounts</h2>
+          <p>
+            Any person or entity that is considering making an investment with a
+            Company that posts its fundraising plans on the website, or after
+            the fundraising plan becomes a qualified offering makes an
+            investment, does so at his or her own risk. IDA investment carries
+            risk that you may lose some or all of your investment. No Content on
+            the website is a replacement for performing your own due diligence,
+            exercising good judgment, and seeking financial, investment, tax or
+            legal advice from qualified and licensed professionals with
+            knowledge of your personal circumstances. Any registered financial,
+            legal or tax representatives that may be working for or with ITA
+            Office or a Company seeking investment through the website are not
+            your personal advisors and do not have knowledge about your personal
+            circumstances and anything they post is for informational purposes
+            only and may not be accurate or current and you agree that you shall
+            not rely on Content on the website in making personal decisions
+            about an investment or the potential legal, tax or financial
+            consequences of such investment. You are encouraged to seek personal
+            professional advice from qualified and licensed professionals.
+          </p>
+
+          <p>
+            You are solely responsible for your investment decisions. While you
+            may be asked about your identity, individual financial circumstances
+            and investment experience and sophistication during your engagement
+            with the website, ITA Office and its advisors and vendors are not
+            responsible to verify the veracity of the information that you
+            provide, even if you certify to its truth. This responsibility
+            review. Whether you are an "Accredited Investor," as such term is
+            defined under securities laws, or a non-accredited investor, or an
+            institutional investor, ITA Office and the Companies seeking
+            investment are relying on your representations with respect to your
+            investment experience, your Investment status and your eligibility
+            to invest. You may, further, be held personally liable for your
+            fraud, negligence and other bad acts that may result from any false
+            representations you make.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container grid">
+        <div>
+          <h2 class="start-text">
+            From home to abroad, your
+            <span class="accent-word">driving freedom</span> stays with you
+          </h2>
+
+          <button class="btn btn-start">Get Started</button>
+          <img class="getstarted" src="getstarted.png" alt="" />
+          <img class="getstarted-invert" src="getstarted.png" alt="" />
+        </div>
+        <div class="cta-figure">
+          <img
+            src="traveler holding IDP.png"
+            alt="Traveler holding IDP (placeholder)"
+          />
+          <img class="crown" src="crown.png" alt="" />
+
+          <img class="curly" src="curlyVector.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container foot-top">
+        <div class="destinations">
+          <strong style="margin-right: 8px; color: #e5e7eb"
+            >Popular Destinations</strong
+          >
+          <div class="countries">
+            <span class="pill"
+              ><img src="https://flagcdn.com/us.svg" alt="US" /> United
+              States</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/tr.svg" alt="Turkey" />
+              Turkey</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/ru.svg" alt="Russia" />
+              Russia</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/gb.svg" alt="UK" /> United
+              Kingdom</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/no.svg" alt="Norway" />
+              Norway</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/cz.svg" alt="Czech" /> Czech</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/ma.svg" alt="Morocco" />
+              Morocco</span
+            >
+            <span class="pill"
+              ><img src="https://flagcdn.com/fr.svg" alt="France" />
+              France</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="container foot-mid">
+        <div>
+          <div class="logo" style="margin-bottom: 10px">
+            <div class="logo-text" style="color: #ffffff">
+              <img src="logo.png" alt="" />
+            </div>
+          </div>
+          <p class="legal">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form.
+          </p>
+          <div
+            style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap"
+          >
+            <img src="visacards.png" alt="" />
+          </div>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="#">Driving Guides</a></li>
+            <li><a href="#">Billing Statement</a></li>
+            <li><a href="#">Countries</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Need help?</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Customer care</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms of use</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container foot-bottom">
+        <div>
+          <p class="legal-disclaimer">
+            Legal Disclaimer: IDA Service is not associated with or a
+            representative of the American Automobile Association, Inc (AAA) and
+            does not assert any government agency status. Your purchase pertains
+            to a translation document and does not serve as a substitute for a
+            valid Driving License.
+          </p>
+        </div>
+        <div class="foot-bottom-right">
+          <div class="legal">© 2025 IDP. All rights reserved.</div>
+          <div class="lang lang-footer">EN / USD ▾</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleFaq(element) {
+        const faqItem = element.parentElement
+        const isActive = faqItem.classList.contains("active")
+
+        // Close all FAQ items
+        document.querySelectorAll(".faq-item").forEach(item => {
+          item.classList.remove("active")
+        })
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          faqItem.classList.add("active")
+        }
+      }
+
+      function closeFaq(element, event) {
+        event.stopPropagation()
+        element.parentElement.parentElement.classList.remove("active")
+      }
+    </script>
+  </body>
+</html>
