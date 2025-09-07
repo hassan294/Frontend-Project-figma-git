@@ -911,7 +911,9 @@
                 <button
                   id="startAppBtn"
                   class="btn primary"
+                  type="button"
                   style="font-weight: 400"
+                  onclick="window.location.href='../checkout-page2/index.html'"
                 >
                   Start Application
                 </button>
@@ -1006,16 +1008,9 @@
           if (show) {
             if (warning) warning.style.display = "none"
             licenseDetails.style.display = "block"
-            // trigger transition class
             requestAnimationFrame(() => licenseDetails.classList.add("visible"))
             licenseDetails.setAttribute("aria-hidden", "false")
-            // show action buttons
             showPostActions(true)
-            // scroll into view nicely
-            licenseDetails.scrollIntoView({
-              behavior: "smooth",
-              block: "center"
-            })
           } else {
             if (warning) warning.style.display = ""
             licenseDetails.classList.remove("visible")
@@ -1023,7 +1018,6 @@
             setTimeout(() => {
               licenseDetails.style.display = "none"
             }, 220)
-            // hide action buttons
             showPostActions(false)
           }
         }
@@ -1045,25 +1039,7 @@
           else toggleLicenseDetails(false)
         })
 
-        // Save button behaviour (keeps existing lookup if present)
-        const saveBtn = document.getElementById("saveLicenseBtn")
-        if (saveBtn) {
-          saveBtn.addEventListener("click", () => {
-            const numEl = document.getElementById("licenseNumber")
-            const num = numEl ? numEl.value.trim() : ""
-            const country = document.getElementById("licenseCountry")?.value
-            const exp = document.getElementById("licenseExpiry")?.value
-            if (!num || !country || !exp) {
-              alert("Please fill license number, country and expiry date.")
-              return
-            }
-            console.log("License saved:", { number: num, country, expiry: exp })
-            saveBtn.textContent = "Saved"
-            saveBtn.disabled = true
-          })
-        }
-
-        // Clear button: wipe inputs and reset Save button if any
+        // Clear button: just wipe inputs
         if (clearBtn) {
           clearBtn.addEventListener("click", () => {
             const fields = [
@@ -1078,65 +1054,13 @@
               if (el.tagName.toLowerCase() === "select") el.selectedIndex = 0
               else el.value = ""
             })
-            // reset save button visual state if present
-            if (saveBtn) {
-              saveBtn.textContent = "Save"
-              saveBtn.disabled = false
-            }
-            // focus first input if present
-            const first =
-              document.getElementById("licenseNumber") ||
-              document.getElementById("licenseCountry")
-            if (first) first.focus()
           })
         }
 
-        // Start Application button: validate and proceed (replace with real submit)
+        // Start Application button: just redirect (no validation, no payload)
         if (startBtn) {
           startBtn.addEventListener("click", () => {
-            // ensure user selected yes
-            const checked = document.querySelector(
-              'input[name="license"]:checked'
-            )
-            if (!checked || checked.value !== "yes") {
-              alert(
-                "Please confirm that you have a valid driver's license (select Yes)."
-              )
-              return
-            }
-
-            // gather data
-            const payload = {
-              licenseNumber:
-                document.getElementById("licenseNumber")?.value.trim() || "",
-              licenseCountry:
-                document.getElementById("licenseCountry")?.value || "",
-              licenseDestination:
-                document.getElementById("licenseDestination")?.value.trim() ||
-                "",
-              licenseExpiry:
-                document.getElementById("licenseExpiry")?.value || ""
-            }
-
-            // basic validation
-            if (
-              !payload.licenseNumber ||
-              !payload.licenseCountry ||
-              !payload.licenseExpiry
-            ) {
-              alert(
-                "Please complete license number, country of issue and expiry date before proceeding."
-              )
-              return
-            }
-
-            // TODO: replace this with your real submission (AJAX / form submit / redirect)
-            console.log("Starting application with:", payload)
-            // example: redirect to next step
-            // window.location.href = '/start-application?step=1'
-            alert(
-              "Starting application — check console for payload (replace with real submit)."
-            )
+            window.location.href = "../checkout-page2/index.html"
           })
         }
       })()
