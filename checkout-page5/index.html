@@ -884,6 +884,12 @@
         .number {
           width: 5% !important;
         }
+        .container {
+          padding: 0 8px;
+        }
+        .review-section {
+          padding: 20px 10px 22px 10px;
+        }
       }
 
       /* Small phones */
@@ -1124,9 +1130,6 @@
       }
 
       @media (max-width: 768px) {
-        .detail-row {
-          grid-template-columns: 1fr;
-        }
         .detail-value {
           justify-self: start;
           text-align: left;
@@ -1347,6 +1350,15 @@
           right: 6px;
         }
 
+        .container {
+          padding: 0 8px;
+        }
+        .review-section {
+          padding: 20px 10px 22px 10px;
+        }
+        .detail-label {
+          padding: 7px 25px 7px 25px;
+        }
         /* Stack form and sidebar */
         .checkout-container {
           grid-template-columns: 1fr;
@@ -1465,6 +1477,47 @@
         .btn {
           font-size: 14px;
           padding: 10px 14px;
+        }
+      }
+      /* Base (your existing code) already covers desktop/tablet */
+
+      /* Mobile Large (425px and below) */
+      @media (max-width: 425px) {
+        .form-section {
+          display: block; /* stack instead of grid */
+          padding: 15px; /* add breathing space */
+        }
+
+        .first-section,
+        .second-section {
+          padding: 20px 16px 12px 16px; /* reduce padding */
+          border-radius: 12px; /* smaller radius looks cleaner on mobile */
+          margin-top: 20px;
+        }
+
+        .form-section h2 {
+          font-size: 18px; /* scale down heading */
+          padding-left: 10px;
+        }
+
+        .form-subtitle {
+          font-size: 16px; /* slightly smaller text */
+          margin-bottom: 20px;
+        }
+      }
+      @media (max-width: 425px) {
+        .detail-label {
+          display: block; /* stack labels and values */
+          padding: 12px 16px; /* reduce padding */
+          font-size: 16px; /* smaller text for mobile */
+          text-align: left; /* keep labels aligned left */
+        }
+
+        .detail-value {
+          display: block; /* stack below label if inline */
+          padding: 8px 16px; /* add some space */
+          font-size: 16px; /* match label size */
+          color: #464c50; /* slightly darker for readability */
         }
       }
     </style>
