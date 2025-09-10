@@ -10,11 +10,52 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
     <style>
+      @font-face {
+        font-family: "Matter";
+        src: url("../fonts/Matter-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Matter";
+        src: url("../fonts/Matter-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Matter";
+        src: url("../fonts/Matter-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Matter";
+        src: url("../fonts/Matter-Heavy.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+      }
       /* ====== Base / Reset ====== */
       *,
       *::before,
@@ -64,8 +105,12 @@
 
       .container {
         margin-inline: auto;
+        padding: 52px 42px;
       }
 
+      .container-text {
+        text-align: start;
+      }
       /* ====== Top Notice Bar ====== */
       .topbar {
         background: #0ada8f;
@@ -261,15 +306,17 @@
 
       /* ====== Pricing ====== */
       .pricing {
+        margin: 50px 93px;
+        background-image: url("why-image.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
         position: relative;
-        text-align: center;
         background-color: white;
-        padding: 35px 300px;
+        border-radius: 20px;
       }
 
       .pricing p {
-        text-align: center;
-        margin: auto;
         font-family: DM Sans;
         font-weight: 400;
         font-style: Regular;
@@ -277,8 +324,7 @@
         leading-trim: NONE;
         line-height: 24px;
         letter-spacing: 0px;
-        text-align: center;
-        color: #8d8d8d;
+        color: white;
       }
       .section-title {
         font-family: DM Sans;
@@ -287,8 +333,9 @@
         font-size: 32px;
         line-height: 100%;
         letter-spacing: 0px;
-        text-align: center;
         margin-bottom: 16px;
+        margin-top: 0px;
+        color: white;
       }
 
       .section-title-faq {
@@ -298,7 +345,7 @@
         margin: 0 0 8px;
       }
       .section-sub {
-        max-width: 600px;
+        max-width: 825px;
       }
 
       .section-sub-faq {
@@ -597,6 +644,7 @@
         letter-spacing: -2%;
         text-align: center;
         vertical-align: middle;
+
         color: #111111;
       }
 
@@ -665,6 +713,7 @@
       @media (max-width: 360px) {
         .countries-grid {
           grid-template-columns: 1fr;
+          max-height: 290px;
         }
       }
 
@@ -735,7 +784,7 @@
       /* Search card */
       .search-card {
         position: absolute;
-        top: 330px;
+        top: 300px;
         left: 50%;
         transform: translateX(-50%);
         width: 850px;
@@ -1222,12 +1271,11 @@
           grid-template-columns: 1fr;
         }
 
-        .pricing {
-          padding: 30px 160px;
-        }
-
         .second-section {
           padding: 0px;
+        }
+        .search-card {
+          top: 400px;
         }
       }
 
@@ -1605,7 +1653,18 @@
         .cta h2 {
           font-size: 20px;
         }
+        .pricing {
+          margin: 0;
+        }
 
+        .testimonial-cards .card {
+          width: 100%;
+          height: 100%;
+        }
+        .application-start {
+          display: block;
+          text-align: center;
+        }
         .price {
           font-size: 32px;
         }
@@ -1616,6 +1675,9 @@
 
         .foot-mid {
           padding: 20px 0;
+        }
+        .countries-grid {
+          max-height: 310px;
         }
       }
       .start-text {
@@ -1925,7 +1987,7 @@
           </select>
         </label>
 
-        <button class="btn start" style="width: 211px">
+        <button class="btn start">
           Search
           <img src="SVG.png" style="display: inline" alt="" />
         </button>
@@ -1934,9 +1996,24 @@
         <div class="disclaimer-icon">i</div>
 
         <div class="text-black-small">
-          <p style="font-size: 12px">
-            Here you can browse through a list of countries to find out if they
-            accept an IDP
+          <p
+            style="
+              font-size: 12px;
+              font-family: Inter;
+              font-weight: 400;
+              font-style: Regular;
+              font-size: 12px;
+              leading-trim: NONE;
+              line-height: 16px;
+              letter-spacing: 0%;
+              vertical-align: middle;
+            "
+          >
+            You’ll receive both a printed and digital International Driving
+            Permit booklet and card. The digital version is delivered within 5
+            minutes, and the physical copy is shipped to your address.
+            <span style="color: #0168de"> <u>Click here</u></span> for details
+            on countries with IDP restrictions.
           </p>
         </div>
       </div>

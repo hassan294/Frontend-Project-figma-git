@@ -13,6 +13,15 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="stylesheet"
@@ -20,6 +29,33 @@
     />
 
     <style>
+      @font-face {
+        font-family: "Matter";
+        src: url("../fonts/Matter-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Matter";
+        src: url("../fonts/Matter-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Matter";
+        src: url("../fonts/Matter-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Matter";
+        src: url("../fonts/Matter-Heavy.ttf") format("truetype");
+        font-weight: 900;
+        font-style: normal;
+      }
       /* ====== Base / Reset ====== */
       *,
       *::before,
@@ -643,10 +679,15 @@
       }
       /* Blog hero section styling */
       .blog-hero {
-        padding: 60px 0 0 0;
+        background: url("blog-background.png") no-repeat center center;
+        background-size: cover; /* fill container */
+        width: 100%; /* full width */
+        min-height: 70vh; /* 👈 make it at least full screen height */
+        position: relative;
       }
 
       .blog-hero-content {
+        background-color: white;
         display: grid;
         grid-template-columns: 1.2fr 0.8fr; /* keeps the 704:511 ratio */
         gap: 32px;
@@ -654,6 +695,8 @@
         border: 1px solid #f1f1f1;
         box-shadow: 0px 10px 20px 0px #0000000d;
         border-radius: 24px;
+        position: absolute;
+        top: 360px;
       }
 
       .blog-hero-image {
@@ -691,15 +734,18 @@
       }
 
       .blog-hero h1 {
-        font-family: "Inter";
+        color: white;
+        font-family: "Matter";
         font-weight: 500;
         font-style: Medium;
-        font-size: 27.1px;
-        line-height: 33px;
-        letter-spacing: -0.3px;
-        vertical-align: middle;
+        font-size: 48px;
+        leading-trim: NONE;
+        line-height: 65px;
+        letter-spacing: 0%;
+        text-align: center;
+        position: relative;
+        padding-top: 51px;
         margin-top: 0;
-        margin-bottom: 16px;
       }
 
       .blog-hero p {
@@ -743,7 +789,7 @@
       /* Blog content section styling */
       .blog-content {
         margin-left: 113px;
-        padding: 50px 0 0 0;
+        padding: 380px 0 0 0;
         background: white;
         margin-right: 113px;
       }
@@ -852,12 +898,30 @@
       /* ====== Responsive Design ====== */
 
       /* Large screens (default: your current design) */
+      @media (max-width: 1220px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .blog-content {
+          padding-top: 450px;
+        }
+        .blog-hero-content {
+          grid-template-columns: 1fr 1fr;
+        }
 
+        .pricing {
+          padding: 30px 160px;
+        }
+
+        .second-section {
+          padding: 0px;
+        }
+      }
       /* Medium screens (tablets < 1024px) */
       @media (max-width: 1024px) {
         .blog-hero-content {
-          grid-template-columns: 1fr; /* stack image & text */
           margin: 0 40px; /* reduce side margins */
+          gap: 5px;
         }
 
         .blog-hero-image {
@@ -866,10 +930,11 @@
         }
 
         .blog-hero-text {
-          padding: 20px;
+          padding: 10px;
         }
 
         .blog-content {
+          padding-top: 400px;
           margin: 0 40px;
         }
 
@@ -894,6 +959,29 @@
         .blog-card-content {
           padding: 15px;
           text-align: left;
+        }
+      }
+      /* === Add this responsive override below === */
+      @media (max-width: 1024px) {
+        .blog-grid {
+          grid-template-columns: 1fr; /* stack cards vertically */
+        }
+
+        .blog-card {
+          flex-direction: column; /* stack image + text */
+          align-items: flex-start;
+          text-align: left;
+        }
+
+        .blog-card-image {
+          width: 100%;
+          height: auto;
+          margin: 0;
+          border-radius: 16px 16px 0 0;
+        }
+
+        .blog-card-content {
+          padding: 20px;
         }
       }
 
@@ -935,30 +1023,6 @@
           margin: 0;
         }
       }
-      /* === Add this responsive override below === */
-      @media (max-width: 1024px) {
-        .blog-grid {
-          grid-template-columns: 1fr; /* stack cards vertically */
-        }
-
-        .blog-card {
-          flex-direction: column; /* stack image + text */
-          align-items: flex-start;
-          text-align: left;
-        }
-
-        .blog-card-image {
-          width: 100%;
-          height: auto;
-          margin: 0;
-          border-radius: 16px 16px 0 0;
-        }
-
-        .blog-card-content {
-          padding: 20px;
-        }
-      }
-
       @media (max-width: 768px) {
         .blog-card-image {
           height: 200px;
@@ -1290,21 +1354,16 @@
       }
 
       /* ====== Responsive Design ====== */
-
-      /* Tablets (1024px and below) */
-      @media (max-width: 1220px) {
-        .cards {
-          grid-template-columns: 1fr;
+      @media (max-width: 900px) {
+        .blog-hero-content {
+          grid-template-columns: 1fr 1fr;
         }
-
-        .pricing {
-          padding: 30px 160px;
-        }
-
-        .second-section {
-          padding: 0px;
+        .blog-hero-text h1 {
+          font-size: 30px;
         }
       }
+
+      /* Tablets (1024px and below) */
 
       @media (max-width: 1024px) {
         .split {
@@ -1383,6 +1442,15 @@
       @media (max-width: 768px) {
         .container {
           padding: 0 15px;
+        }
+        .blog-hero-text h1 {
+          font-size: 20px;
+        }
+        .blog-hero-text p {
+          font-size: 15px;
+        }
+        .blog-content {
+          padding-top: 300px;
         }
 
         .topbar {
@@ -1689,12 +1757,30 @@
         text-align: center;
         padding: 0px 25px 0px 25px;
       }
-
+      @media (max-width: 590px) {
+        .blog-content {
+          padding-top: 360px;
+        }
+      }
       /* Very small phones (480px and below) */
       @media (max-width: 480px) {
         .section-title,
         .section-title-faq {
           font-size: 20px;
+        }
+
+        .blog-hero-text h1 {
+          font-size: 15px;
+        }
+
+        .blog-hero-text p {
+          font-size: 12px;
+        }
+        .blog-content {
+          padding-top: 300px;
+        }
+        .blog-content h2 {
+          font-size: 25px;
         }
 
         .cta h2 {
@@ -1713,6 +1799,12 @@
           padding: 20px 0;
         }
       }
+      @media (max-width: 350px) {
+        .blog-hero-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
       .start-text {
         max-width: 370px;
       }
@@ -1813,27 +1905,31 @@
 
     <!-- Blog Hero Section -->
     <section class="blog-hero">
-      <div class="blog-hero-content">
-        <div class="blog-hero-image">
-          <img src="blog-first.svg" alt="International Driving Permits" />
-        </div>
-        <div class="blog-hero-text">
-          <span class="category-tag">Category</span>
-          <h1>
-            Travel Smarter, Drive Anywhere: International Driving Permits
-            Explained
-          </h1>
-          <p>
-            Learn everything about the International Driving Permit (IDP) – what
-            it is, how to get it, and why it's essential for driving legally
-            abroad. A complete guide for travelers in 2025.
-          </p>
-          <div class="author-info">
-            <img src="idpAuthority.svg" alt="IDP Authority" />
-          </div>
+      <h1>
+        Everything you need to know about
+        <div style="color: #04da8d">driving internationally</div>
+      </h1>
+    </section>
+    <div class="blog-hero-content">
+      <div class="blog-hero-image">
+        <img src="blog-first.svg" alt="International Driving Permits" />
+      </div>
+      <div class="blog-hero-text">
+        <span class="category-tag">Category</span>
+        <h1>
+          Travel Smarter, Drive Anywhere: International Driving Permits
+          Explained
+        </h1>
+        <p>
+          Learn everything about the International Driving Permit (IDP) – what
+          it is, how to get it, and why it's essential for driving legally
+          abroad. A complete guide for travelers in 2025.
+        </p>
+        <div class="author-info">
+          <img src="idpAuthority.svg" alt="IDP Authority" />
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- Blog Content Section -->
     <section class="blog-content">
