@@ -1225,7 +1225,7 @@
           <a href="../Countries-page/index.html">Countries</a>
           <a href="../Bloq-page/index.html">Blog</a>
           <a href="../Contact-page/index.html">Contact us</a>
-          <a href="../normal-page/index.html">About us</a>
+          <a href="../aboutus-page/index.html">About us</a>
         </nav>
 
         <div class="actions">
@@ -1274,12 +1274,12 @@
             &times;
           </button>
           <nav>
-            <a href="#">Home</a>
-            <a href="#">Pricing</a>
-            <a href="#">Countries</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact us</a>
-            <a href="#">My account</a>
+            <a href="../Driving-homepage/index.html">Home</a>
+            <a href="../Pricing-page/index.html">Pricing</a>
+            <a href="../Countries-page/index.html">Countries</a>
+            <a href="../Bloq-page/index.html">Blog</a>
+            <a href="../Contact-page/index.html">Contact us</a>
+            <a href="../aboutus-page/index.html">About us</a>
             <div style="margin-top: 20px">
               <button class="btn primary" style="width: 100%">Apply Now</button>
             </div>
@@ -1611,6 +1611,10 @@
     </footer>
 
     <script>
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobileMenu")
+        menu.classList.toggle("active")
+      }
       function toggleFaq(element) {
         const faqItem = element.parentElement
         const isActive = faqItem.classList.contains("active")
